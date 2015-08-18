@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Magus
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2012-February/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Magus&In-Reply-To=%3C1328646288.2790.29.camel%40christof-hp%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000304.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Magus</H1>
+    <B>Christof Petig</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Magus&In-Reply-To=%3C1328646288.2790.29.camel%40christof-hp%3E"
+       TITLE="[MAGUS] Magus">christof.petig at arcor.de
+       </A><BR>
+    <I>Tue Feb  7 21:24:48 CET 2012</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000304.html">[MAGUS] Magus
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#303">[ date ]</a>
+              <a href="thread.html#303">[ thread ]</a>
+              <a href="subject.html#303">[ subject ]</a>
+              <a href="author.html#303">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Arndt,
+
+On Di, 2012-02-07 at 14:17 +0100, Alessandro Filippetti wrote:
+&gt;<i> Am 07.02.2012 12:06:33 schrieb Faulhaber, Arndt:
+</I>&gt;<i> &gt; Naja, der Einfachheit halber hatte ich einfach mal das Sourcenpaket
+</I>&gt;<i> &gt; von der Webseite (magus-1.3.3.tar.bz2) runtergeladen (komisch, dass
+</I>&gt;<i> &gt; ich bisher noch nie was von Monotone geh&#246;rt habe... CVS, SVN, GIT,
+</I>&gt;<i> &gt; Mercure etc. sind mir alle bekannt / naja, gibt immer was, was man
+</I>&gt;<i> &gt; noch nicht kennt ;) )
+</I>
+Monotone ist der Vater von git - leider nicht allzu verbreitet. Kann
+alles, was git kann, ist etwas einfacher zu bedienen (habe ich geh&#246;rt)
+aber &quot;langsamer&quot; (der Grund f&#252;r die Entstehung von git).
+  <A HREF="http://en.wikipedia.org/wiki/Monotone_%28software%29#Monotone_as_Git_inspiration">http://en.wikipedia.org/wiki/Monotone_%28software%29#Monotone_as_Git_inspiration</A>
+
+mtn pull petig-baender.dyndns.org *
+
+&gt;<i> &gt; Habe dann unter midgard\MSVC_Net2008 die Solution ge&#246;ffnet - darin
+</I>&gt;<i> 
+</I>&gt;<i> Du versucht es unter Windows? Ich wei&#223; jetzt nicht, wie weit Christof 
+</I>&gt;<i> mit der Umstellung aktuell ist. Er hat verschiedene Ans&#228;tze wegen des 
+</I>&gt;<i> GUI ausprobiert, die aber jede f&#252;r sich ihre eigenen Pferdef&#252;&#223;e haben, 
+</I>&gt;<i> vor allem gab es Probleme wegen der jeweiligen Abh&#228;ngigkeiten 
+</I>&gt;<i> verschiedener Library-Versionen (von/innerhalb gtk) unter Windows, so 
+</I>&gt;<i> dass sich -bislang- keine aktuelle lauff&#228;hige MAGuS-Version (unter 
+</I>&gt;<i> Windows) kompilieren lie&#223;.
+</I>
+Das msvcrt.dll vs. msvcrt8/9/10.dll Problem ist gut unter 
+<A HREF="http://mail.gnome.org/archives/gtk-devel-list/2005-February/msg00078.html">http://mail.gnome.org/archives/gtk-devel-list/2005-February/msg00078.html</A>
+beschrieben und hat in der Vergangenheit bewirkt, dass ich nach einigen
+investierten Wochen (!) die Entwicklung mit Visual Studio 9 wieder
+aufgegeben habe. Ich hatte viele dlls und eine exe, aber das ganze
+st&#252;rzte ab, bevor das erste Fenster kam - Gtk war damals nicht unter VS
+zu debuggen, da es nur mit mingw &#252;bersetzt wurde, scheint jetzt besser:
+  <A HREF="http://live.gnome.org/GTK%2B/Win32/NativeBuildWithOBS">http://live.gnome.org/GTK%2B/Win32/NativeBuildWithOBS</A>
+[Vorsicht, magus verwendet noch _nicht_ gtk3!]
+
+Danach habe ich gro&#223;e Hoffnungen auf mingw-get gesetzt (damit l&#228;sst sich
+eine komplette (kostenlose) Umgebung mit wenigen Befehlen unter Windows
+aufsetzen). Allerdings d&#252;mpelt die Verf&#252;gbarkeit von glib/pango/gtk etc.
+f&#252;r mingw-get ein wenig vor sich hin.
+  
+Siehe auch:
+  <A HREF="http://home.arcor.de/habr64/gtk/build.html">http://home.arcor.de/habr64/gtk/build.html</A> (veraltet? aber tiefgehend)
+
+Dann fiel mir noch auf, was ich au&#223;er Magus noch mit meiner Freizeit
+machen k&#246;nnte (Familie, Gemeinde, Theater spielen, Lesen Filme gucken)
+und die beruflichen Anforderungen zogen _deutlich_ an :-S (zum Teil
+arbeite ich gerade auch abends)
+
+Tja, welche Optionen bleiben? *)
+- ein langer Weg mit einer Gtk3-Portierung (w&#252;rde ich als Laie nicht
+beginnen, steht auf meiner Liste eher unten) und dann Visual Studio
+- ein kurzer Weg mittels mingw (ich habe alles Notwendige unter) 
+  <A HREF="http://petig-baender.dyndns.org/users/christof/mingw32-ubuntu/">http://petig-baender.dyndns.org/users/christof/mingw32-ubuntu/</A>
+[zwar f&#252;r Linux gebaut, aber auch unter mingw/Windows zu verwenden]
+- direkte Verwendbarkeit der Pakete bei cross-compiling unter
+Ubuntu/CoLinux etc. ;-)
+
+- libmagus (die Logikschicht unter magus) mit Visual Studio &#252;bersetzen
+und eine eigene Oberfl&#228;che mit MFC oder .NET dazu basteln. Dies ist ein
+gro&#223;es Projekt, f&#252;r das sich vielleicht aber auch ein paar Mitstreiter
+finden w&#252;rden. Da gibt es ein paar Abh&#228;ngigkeiten, die gut l&#246;sbar sind
+(sigc++, ManuProC_Base). Allerdings br&#228;uchte man schon die Umstellung,
+um per PoDoFo PDF Formulare auszuf&#252;llen. LaTeX zum Drucken macht unter
+Windows keinen Spa&#223;, wenn man es nicht schon unter Unix kennengelernt
+hat.
+
+Ich rufe Dich auch gerne an, dann ist vieles schneller zu (er-)kl&#228;ren
+   Christof
+
+*) Sorry, dass die ideale L&#246;sung nicht dabei ist :-(
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/midgard-general/attachments/20120207/3fbd4b3e/attachment.pgp">https://lists.berlios.de/pipermail/midgard-general/attachments/20120207/3fbd4b3e/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000304.html">[MAGUS] Magus
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#303">[ date ]</a>
+              <a href="thread.html#303">[ thread ]</a>
+              <a href="subject.html#303">[ subject ]</a>
+              <a href="author.html#303">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

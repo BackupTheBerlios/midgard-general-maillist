@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Kleinere Installationsbugs
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2011-May/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Kleinere%20Installationsbugs&In-Reply-To=%3Calpine.LNX.2.00.1105281523580.4897%40wma7002.mathematik.uni-wuerzburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000297.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Kleinere Installationsbugs</H1>
+    <B>Vaeth</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Kleinere%20Installationsbugs&In-Reply-To=%3Calpine.LNX.2.00.1105281523580.4897%40wma7002.mathematik.uni-wuerzburg.de%3E"
+       TITLE="[MAGUS] Kleinere Installationsbugs">vaeth at mathematik.uni-wuerzburg.de
+       </A><BR>
+    <I>Sat May 28 16:06:52 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000297.html">[MAGUS] MAGuS 1.3.3
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#298">[ date ]</a>
+              <a href="thread.html#298">[ thread ]</a>
+              <a href="subject.html#298">[ subject ]</a>
+              <a href="author.html#298">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+heute habe ich mal wieder Zeit gefunden, das ebuild im Gentoo mv Overlay
+auf den neuesten Stand (magus-1.3.3) zu bringen.
+Zum Installieren musste ich ein paar kleinere Bugs patchen,
+die ich hiermit melden will:
+
+1.
+Die Files
+   Money-gray.png
+   saebel.png
+werden nicht nicht installiert - ich musste sie in midgard/src/Makefile.am
+nachtragen (bei EXTRA_DIST fehlen sie ebenfalls - ich bin verwundert,
+weshalb sie trotzdem im Tarball sind).
+
+2.
+Das zweite Problem h&#228;ngt damit zusammen, dass ich f&#252;r ev. Bauen aus
+dem monotone-Repository grunds&#228;tzlich &quot;reautoconf&quot;e:
+In ManuProCWidgets l&#228;uft das aclocal wegen des fehlenden m4 Directories
+nicht durch - was OK ist, weil ja anscheinend vorher &quot;autopoint&quot;
+aufgerufen werden sollte.
+Aber ein &quot;autopoint&quot; (ich benutze die Version aus gettext-0.18.1.1)
+l&#228;uft nicht glatt durch: Es beschwert sich &#252;ber ein angeblich fehlendes
+AM_GNU_GETTEXT_VERSION(....)
+in configure.in, obwohl dieses Kommando dort steht.
+Durch Experimentieren habe ich herausgefunden, dass autpoint nicht mag,
+dass dieses Kommando nicht am Beginn der Zeile steht - einfaches L&#246;schen
+der Leerzeichen davor reicht aus, dass autopoint die Zeile erkennt.
+
+3.
+Mit dem autopoint gibt es eine Merkw&#252;rdigkeit
+(ich wei&#223; nicht, ob es ein Bug ist):
+Es sagt mir, dass lokale Files ge&#228;ndert wurden - tats&#228;chlich listet es
+mehrere kleinere &#196;nderungen (bei Bedarf kann ich sie hier posten).
+Wurden diese bewusst gemacht?
+Um den Fehlerabbruch zu vermeiden, mache ich mit &quot;autopoint --force&quot;
+diese &#196;nderungen r&#252;ckg&#228;ngig - und danach l&#228;sst sich magus problemlos
+installieren und scheint dann auch problemlos zu laufen.
+
+4.
+Mir ist aufgefallen, dass die Datei ManuProCBase/macros/petig.m4
+sich von anderen petig.m4-Dateien unterscheidet.
+M&#246;glicherweise ist das beabsichtigt, vielleicht lief aber auch irgendein
+Upgrade schief - Timestamp und $Id ...$ im Kopf sind n&#228;mlich die selben.
+
+Sch&#246;ne Gr&#252;&#223;e
+Martin V&#228;th
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000297.html">[MAGUS] MAGuS 1.3.3
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#298">[ date ]</a>
+              <a href="thread.html#298">[ thread ]</a>
+              <a href="subject.html#298">[ subject ]</a>
+              <a href="author.html#298">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Magus 1.33 als Virtual Box
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2013-January/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Magus%201.33%20als%20Virtual%20Box&In-Reply-To=%3C50F161EB.3020706%40jungle.kn-bremen.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000306.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Magus 1.33 als Virtual Box</H1>
+    <B>Panther</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Magus%201.33%20als%20Virtual%20Box&In-Reply-To=%3C50F161EB.3020706%40jungle.kn-bremen.de%3E"
+       TITLE="[MAGUS] Magus 1.33 als Virtual Box">panther at jungle.kn-bremen.de
+       </A><BR>
+    <I>Sat Jan 12 14:15:23 CET 2013</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000306.html">[MAGUS] PostgresSQL
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#305">[ date ]</a>
+              <a href="thread.html#305">[ thread ]</a>
+              <a href="subject.html#305">[ subject ]</a>
+              <a href="author.html#305">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+an alle anderen Magus User..
+
+
+Das Zip-Archiv der VBOX-Platte (Dynamisch) ist dennoch 4.3 GB gross.
+
+Wo soll ich das hin laden?
+
+Ansonsten Diskussion bitte &#252;ber Verbesserungen...
+
+Hat Einer den 1.33 Code als Eclipse-Projekt?
+
+Bye
+
+Panther
+
+-----------------
+
+
+1) Virtual Box installiert (4.2.6 r82870)
+
+   VT im BIOS aktiviert
+
+2) Virtual Box Sachen f&#252;r USB 2 Support geholt und installiert
+
+3) Open Suse 12.2 64 bit geholt und installiert in Virutal box
+    2 TB dynamische Festplatte
+    User magus password magus
+    Magus autologin, admin-rechte
+
+4) Open Suse via YAST online Update und Verwaltung aktualiesieren
+
+    Mit YAST Software
+
+5) Acrobat Reader installieren
+
+    &#252;ber YAST Suche adobe acroread installieren
+
+6) Drucker installieren
+
+    unter YAST Hardware findet man auch Drucker
+
+    bei panther bl&#246;d &#252;ber USB to paralell Kyocera 720
+
+    f&#252;r Drucker mit YAST isntallieren
+
+51) ??? Magus Montotone install
+
+52) 1,33 source tar bz2 von midgard berlios geholt
+
+101) magus einloggen wegen Autologin nicht n&#246;tig
+
+102) Ben&#246;tigt zum Kompilieren werden
+
+    - postgresql (+Developmentpakete)
+    - postgresql-devel
+       - nett dazu: pgadmin3
+       - hilfreich: postgresql-docs
+    - libgtkmm_2_4-1
+    - gtkmm-2-4-1-devel
+    - libsigc-2_0
+    - libsigc-2_0-devel
+    - automake &gt;= 1.9
+    - autoconf &gt;= 2.59
+    - pdftex (Teil von texlive) (+Developmentpakete)
+       - texlive
+       - texlive-devel
+       - texlive-doc
+       - hilfreich: texlive - tools
+       -            texlive - latex
+       -            texlive - latex - doc
+       -            texlive - tex4ht
+       -            texmaker
+    - podofo &gt;= 0.8
+    - podofo-devel
+
+    - make
+    - gcc
+    - gcc-c++
+    - libtool
+    - gettext-tools
+
+      erst wenn es Probleme gibt....
+
+    - gtk2-engines
+    - gtk2-engines-devel
+
+
+103) - pngcrush
+
+      von sourceforge 1.7.41 downloaden
+
+      nach home/magus/bin kopieren, dort auspacken
+
+      in das Verzeichnis gehen und compilieren mit
+
+      &quot;make all&quot;
+
+      in das /home/magus/bin/ Verzeichnis gehen und installieren mit
+
+      &quot;ln -s /home/magus/pngcrush-xxxx/pngcrush pngcrush&quot;
+
+104) Magus SRC TAR-Archiv entpacken
+
+      mkdir /home/magus/magus
+
+      hier dann magus-133 src tar gz entpacken und den INhalt des magus 
+1-33 ordner (4 Ordner) nach
+      /home/magus/magus kopieren
+
+105) Compile Jeweils in
+
+      ManuProC_Base/
+
+      'aclocal -I macros'
+      './autogen.sh'
+
+      GtkmmAddons/
+
+       'aclocal'
+       './autogen.sh'
+
+      ManuProC_Widgets/
+
+      in Unterordner src gehen und
+
+            in ModeWidgetConnection.h:
+
+                 #include &lt;glib/gtypes.h&gt;
+                 &#228;ndern in
+                 #include &lt;glib.h&gt;
+
+            in SimpleTreeModel.h:
+
+                 #include &lt;glib/gtypes.h&gt;
+                 &#228;ndern in
+                 #include &lt;glib.h&gt;
+
+       'aclocal -I macros'
+      './autogen.sh'
+
+      midgard/
+
+      'aclocal -I macros'
+      './autogen.sh'
+
+106) Installieren
+
+      in 'midgard'
+
+      make install
+
+      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; FEHLERHAFT nicht genutzt
+
+
+107) MAGuS starten:
+
+      In magus-1.1.3/midgard/src/
+
+      './magus'
+
+       ausf&#252;hren.
+
+201)  Nach den Start in Einstellungen
+
+       Pdf-Ausgabe mit Programmm /usr/bin/acroread  einstellen
+
+202)  Default-Einstellungen machen
+
+       Magus beeenden
+
+204)  Magus im Desktop verankern
+
+       Unten links auf dem Kam&#228;leon rechte Maustaste klicken
+
+       Dort Men&#252;eintr&#228;ge bearbeiten... w&#228;hlen
+
+       Gruppe Spiele selektieren und dann neues Element klicken
+
+       Dann Namen Magus und Befehl /home/magus/magus/midgard/src/magus 
+w&#228;hlen
+       Als Arbeitsverzeichnis /home/magus/magus/midgard/src/magus w&#228;hlen
+       Speichern am Ende
+
+       Ab sofort ist Magus unter Anwendungen Spiele zu finden. Von dort 
+kann man mit Rechter Maustaste Magus auch zum Favorit machen.
+       Dann kann man Magus sofort sehen.
+
+
+
+FERTIG
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000306.html">[MAGUS] PostgresSQL
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#305">[ date ]</a>
+              <a href="thread.html#305">[ thread ]</a>
+              <a href="subject.html#305">[ subject ]</a>
+              <a href="author.html#305">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Magus und libsigc++
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Magus%20und%20libsigc%2B%2B&In-Reply-To=%3CPine.LNX.4.64.0807112308050.2207%40wmax001.mathematik.uni-wuerzburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000258.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Magus und libsigc++</H1>
+    <B>Vaeth</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Magus%20und%20libsigc%2B%2B&In-Reply-To=%3CPine.LNX.4.64.0807112308050.2207%40wmax001.mathematik.uni-wuerzburg.de%3E"
+       TITLE="[MAGUS] Magus und libsigc++">vaeth at mathematik.uni-wuerzburg.de
+       </A><BR>
+    <I>Sat Jul 12 00:09:18 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000258.html">[MAGUS] magus und sqlite?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#257">[ date ]</a>
+              <a href="thread.html#257">[ thread ]</a>
+              <a href="subject.html#257">[ subject ]</a>
+              <a href="author.html#257">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+es hatte etwas gedauert bis ich testen konnte (Semesterende ....
+und dann war anscheinend der Server ein paar Tage offline).
+
+Leider gibt es jetzt zwei anderen Fehler.
+Den ersten konnte ich leicht beheben:
+
+1. In ManuProC_Widgets kamen merk&#252;rdige Fehler bzgl. der
+   libsigc++-Version. Der Grund scheint zu sein, dass
+   ManuProC_Widgets/macros/petig.m4 nicht auf dem neuesten Stand ist.
+   Das habe ich durch Kopieren von ManuProC_Base/macros anscheinend
+   behoben.
+
+Aber was sich nicht so leicht beheben l&#228;sst:
+
+2. ManuProC_Base/src/.libs/libManuProC_Base.so meldet beim Linken:
+   undefined reference to `ECPGget_PGconn'
+
+Wenn meine Internet-Recherche richtig, scheint das ein neuer Hack zu sein,
+der in keiner offiziellen postgresql-Version (versucht habe ich 8.0.15,
+8.2.7 und 8.3.1) vorhanden ist.
+
+Sch&#246;ne Gr&#252;&#223;e
+Martin
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000258.html">[MAGUS] magus und sqlite?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#257">[ date ]</a>
+              <a href="thread.html#257">[ thread ]</a>
+              <a href="subject.html#257">[ subject ]</a>
+              <a href="author.html#257">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

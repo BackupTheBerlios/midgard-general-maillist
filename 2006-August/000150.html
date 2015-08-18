@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] MAGUS - Bugreport - 17 Aug 06
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2006-August/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20MAGUS%20-%20Bugreport%20-%2017%20Aug%2006&In-Reply-To=%3C44E47921.9030000%40uni-muenster.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000148.html">
+   <LINK REL="Next"  HREF="000151.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] MAGUS - Bugreport - 17 Aug 06</H1>
+    <B>Malte Thoma</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20MAGUS%20-%20Bugreport%20-%2017%20Aug%2006&In-Reply-To=%3C44E47921.9030000%40uni-muenster.de%3E"
+       TITLE="[MAGUS] MAGUS - Bugreport - 17 Aug 06">thoma at uni-muenster.de
+       </A><BR>
+    <I>Thu Aug 17 16:11:45 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000148.html">[MAGUS] MAGUS - Bugreport - 17 Aug 06
+</A></li>
+        <LI>Next message: <A HREF="000151.html">[MAGUS] xml export
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#150">[ date ]</a>
+              <a href="thread.html#150">[ thread ]</a>
+              <a href="subject.html#150">[ subject ]</a>
+              <a href="author.html#150">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">magus at sulvahir.de</A> wrote:
+&gt;<i> Dieser Bugreport wurde generiert von: <A HREF="http://midgard.berlios.de/pages/bugform.html">http://midgard.berlios.de/pages/bugform.html</A>
+</I>&gt;<i> Antworten bitte _nur_ an <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">Taladan at freenet.de</A> (und ggf. an die Liste) 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ABSENDER: Jorg, <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">Taladan at freenet.de</A> 
+</I>&gt;<i> BETRIEBSSYSTEM: Windows XP - Home  x86 (intel/amd 32bit) 
+</I>&gt;<i> MAGUS-Version: 0.9.9.15
+</I>&gt;<i> Quelle: CVS 
+</I>&gt;<i> Version: 
+</I>&gt;<i> Der Fehler bezieht sich auf die Regelimplementierung.
+</I>&gt;<i> Der Fehler ist reproduzierbar.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Fehlerbeschreibung:
+</I>&gt;<i> 
+</I>&gt;<i> Beschreibung des Zaubers Fesselbann:
+</I>&gt;<i> \&quot;... Es kann seine Gliedma&#195;?en nicht bewegen, ist aber NICHT in der Lage, um Hilfe zu rufen...\&quot;
+</I>&gt;<i> -&gt; Streiche das zweite \&quot;nicht\&quot;.
+</I>
+Fixed
+
+
+&gt;<i> Beschreibung des Zaubers Verbotenes Wort: 
+</I>&gt;<i> \&quot;...so kann er mit Hilfe der M&#195;&#164;chte der Ordnung Kreaturen...\&quot; &#195;&#164;ndere in: \&quot;...so kann er mit Hilfe der M&#195;&#164;chte der Finsternis Kreaturen, die als St&#195;&#188;tze der Ordnung gelten,...\&quot; 
+</I>&gt;<i>
+</I>
+FIxed
+
+ \&quot;Finstere Wesen bis Grad 3 werden get&#195;&#182;tet\&quot; &#195;&#164;ndere in \&quot;Wesen bis
+Grad 3, die als St&#195;&#188;tze der Ornung gelten, werden get&#195;&#182;tet\&quot;
+&gt;<i> ...oder so &#195;&#164;hnlich, kenne die Terminlogie nicht so gut wie ihr :-)
+</I>&gt;<i> 
+</I>
+Naja, etwas schwieriger. &quot;Ordentliche Wesen&quot; ist wohl nicht so gut ...
+Wie w&#228;re es mit
+ Verbotenes Wort | Spricht der Zauberer das 'Verbotene Wort' mit der
+n&#246;tigen Konzentration und Betonung aus, so kann er mit Hilfe der M&#228;chte
+der Finsternis entsprechenden Kreaturen betr&#228;chtlichen Schaden zuf&#252;gen,
+betroffen sind unter anderem Wei&#223;e Hexer und Priester (au&#223;er
+Chaospriester) ab Grad 7. Wesen bis Grad 3 werden get&#246;tet; Wesen von
+Grad 4-6 werden 1W6*10min gel&#228;hmt; Wesen von Grad 7-9 werden 2W6*10sec
+geschw&#228;cht so das sie quasi wehrlos sind und einen Malus von -10 auf
+Zaubern und -2 auf alle anderen Erfolgsw&#252;rfe erhalten; Wesen ab Grad 10
+erleiden 1W6*10sec und einen Abzug von -2 auf alle Erfolgsw&#252;rfe.
+
+
+und da wir gerade dabei sind:
+
+ Heiliges Wort | Spricht der Zauberer das 'Heilige Wort' mit der n&#246;tigen
+Konzentration und Betonung aus, so kann er mit Hilfe der Kr&#228;fte der
+Ordnung finsteren Kreaturen betr&#228;chtlichen Schaden zuf&#252;gen. Finstere
+Wesen bis Grad 3 werden get&#246;tet; Wesen von Grad 4-6 werden 1W6*10min
+gel&#228;hmt; Wesen von Grad 7-9 werden 2W6*10sec geschw&#228;cht so das sie quasi
+wehrlos sind und einen Malus von -10 auf zaubern und -2 auf alle anderen
+Erfolgsw&#252;rfe; Wesen ab Grad 10 erleiden 1W6*10sec einen Abzug von -2 auf
+alle Erfolgsw&#252;rfe.
+
+
+
+... allerdings ist der Fix nur in der Datenbank drin. Christof m&#252;&#223;te
+den xml export noch fixen, sonst kann ich keine neuen xml-Dateieen
+erstellen :-(
+
+Gru&#223;,
+
+Malte
+
+
+
+
+&gt;<i> Jorg.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Midgard-general mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">Midgard-general at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">https://lists.berlios.de/mailman/listinfo/midgard-general</A>
+</I>
+
+- --
+***********************************************************************
+***  Dr. Malte Thoma             ***  email: <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">thoma at bas.ac.uk</A>        ***
+***                              ***         <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">thoma at uni-muenster.de</A>  ***
+***  British Antarctic Survey    ***                                ***
+***  High Cross, Madingley Road  ***  Tel.:  0044 (0)1223 221346    ***
+***  Cambridge, CB3 0ET          ***  Fax.:  0044 (0)1223 221226    ***
+***  United Kingdom              ***                                ***
+***********************************************************************
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFE5HkeN0SAw637+84RAuvlAJ0cvKYAzvA7FZuYaWkuYbKk1OAqeACfdDHV
+zbngtq9gBYbMBZdX/KU4cjE=
+=Betd
+-----END PGP SIGNATURE-----
+
+--  
+This message (and any attachments) is for the recipient only.  NERC is subject
+to the Freedom of Information Act 2000 and the contents of this email and any
+reply you make may be disclosed by NERC unless it is exempt from release under
+the Act.  Any material supplied to NERC may be stored in an electronic
+records management system.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000148.html">[MAGUS] MAGUS - Bugreport - 17 Aug 06
+</A></li>
+	<LI>Next message: <A HREF="000151.html">[MAGUS] xml export
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#150">[ date ]</a>
+              <a href="thread.html#150">[ thread ]</a>
+              <a href="subject.html#150">[ subject ]</a>
+              <a href="author.html#150">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

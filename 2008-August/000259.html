@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] magus und sqlite?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2008-August/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20magus%20und%20sqlite%3F&In-Reply-To=%3C48934890.9090905%40arcor.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000260.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] magus und sqlite?</H1>
+    <B>Christof Petig</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20magus%20und%20sqlite%3F&In-Reply-To=%3C48934890.9090905%40arcor.de%3E"
+       TITLE="[MAGUS] magus und sqlite?">christof.petig at arcor.de
+       </A><BR>
+    <I>Fri Aug  1 19:32:00 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000260.html">[MAGUS] Magus und libsigc++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#259">[ date ]</a>
+              <a href="thread.html#259">[ thread ]</a>
+              <a href="subject.html#259">[ subject ]</a>
+              <a href="author.html#259">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Vaeth schrieb:
+&gt;<i> interpretiere ich die ./configure-Option --enable-sqlite in ManuProC_Base
+</I>&gt;<i> richtig, dass man Magus anstelle der postgresql-Abh&#228;ngigkeit alternativ
+</I>&gt;<i> nur eine Abh&#228;ngigkeit vom viel schlankeren sqlite verpassen k&#246;nnte?
+</I>&gt;<i> Gentoo-Benutzer haben Letzteres ohnehin mit einiger Wahrscheinlichkeit
+</I>&gt;<i> auf der Platte; auf jeden Fall k&#246;nnte ich im Ebuild die Wahlm&#246;glichkeit
+</I>&gt;<i> mit einem USE-Flag an den Benutzer durchreichen (und einen default
+</I>&gt;<i> vorschlagen).
+</I>&gt;<i> Meine Versuche mit dieser Option kamen aber nur bis ManuProC_Widgets:
+</I>&gt;<i> Hier war der Spa&#223; zuende mit
+</I>&gt;<i>   IntStringBox_sql.cc: No such file or directory
+</I>&gt;<i> Habe ich etwas &#252;bersehen, oder ist das einfach nur nicht fertig
+</I>&gt;<i> implementiert?
+</I>
+Hallo Martin,
+
+tats&#228;chlich kann man postgresql komplett weglassen um Magus zu
+&#252;bersetzen - oder es durch sqlite ersetzen. Allerdings bin ich damit
+noch nicht fertig ... es hakt in ManuProC_Widgets, wenn man ecpg durch
+touch ersetzt (wie in ManuProC_Base) geht es weiter. Den Hack werde ich
+dann in Zukunft machen (oder ecpg ganz eliminieren).
+
+   Christof
+
+PS: Jetzt kann man magus auch mit Visual C++ &#252;bersetzen (was Linux
+Nutzer kaum interessieren d&#252;rfte) - aber !!! es sollte die Anzahl an
+Leuten, die in der Lage sind, es zu &#252;bersetzen, deutlich heraufsetzen.
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (GNU/Linux)
+Comment: Using GnuPG with Mozilla - <A HREF="http://enigmail.mozdev.org">http://enigmail.mozdev.org</A>
+
+iEYEARECAAYFAkiTR9MACgkQng+R+0ucfO2iAACglN2Jk0flPZeX2dpm3CqoVbIH
+8KMAnj38DbJhW8axawCsCAeO9/TK3cGD
+=Zlgx
+-----END PGP SIGNATURE-----
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000260.html">[MAGUS] Magus und libsigc++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#259">[ date ]</a>
+              <a href="thread.html#259">[ thread ]</a>
+              <a href="subject.html#259">[ subject ]</a>
+              <a href="author.html#259">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

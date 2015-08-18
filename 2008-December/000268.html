@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] LIBS-Eintrag fehlt
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2008-December/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20LIBS-Eintrag%20fehlt&In-Reply-To=%3CPine.LNX.4.64.0812030953150.15244%40wmax001.mathematik.uni-wuerzburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] LIBS-Eintrag fehlt</H1>
+    <B>Vaeth</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20LIBS-Eintrag%20fehlt&In-Reply-To=%3CPine.LNX.4.64.0812030953150.15244%40wmax001.mathematik.uni-wuerzburg.de%3E"
+       TITLE="[MAGUS] LIBS-Eintrag fehlt">vaeth at mathematik.uni-wuerzburg.de
+       </A><BR>
+    <I>Wed Dec  3 17:33:27 CET 2008</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#268">[ date ]</a>
+              <a href="thread.html#268">[ thread ]</a>
+              <a href="subject.html#268">[ subject ]</a>
+              <a href="author.html#268">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+schon seit einiger Zeit hatte ich festgestellt, dass
+
+	LDFLAGS=-Wl,--as-needed
+
+mit Magus Probleme macht. Das ist typischerweise ein Symptom f&#252;r
+einen fehlenden/falschen LIBS- oder LIBADD-Eintrag in autotools,
+siehe z.B. Diegos Erl&#228;uterungen in
+	<A HREF="http://www.gentoo.org/proj/en/qa/asneeded.xml">http://www.gentoo.org/proj/en/qa/asneeded.xml</A>
+
+Durch Experimentieren - ohne tiefere Analyse des Magus-Build-Systems -
+habe ich festgestellt, dass
+
+	LIBS=-lManuProC_Base
+
+am Anfang von midgard/libmagus/Makefile.am Abhilfe schafft.
+Es w&#228;re sch&#246;n, wenn dieser Bugfix (falls er korrekt ist)
+in das Monotone-Repository &#252;bernommen werden k&#246;nnte.
+
+BTW: Zur Zeit scheint petig-baender.dyndns.org nicht online zu sein.
+Gibt es eine Ersatz-Adresse?
+Bei meinem letzten Zugriff (Ende September) waren die folgenden
+drei kleinen Bugs (die ich fr&#252;her mal gemeldet hatte)
+ebenfalls noch nicht behoben:
+
+1. In midgard/tools/translate/translate.cc fehlt ein
+	#include &lt;cstdlib&gt;
+   (sonst geht Kompilation mit gcc-4.3 nicht)
+
+2. In ManuProC_Base/src/Makefile.am steht im &quot;install-data-hook&quot; dreimal
+	-cd $(includedir)
+   statt
+	-cd $(DESTDIR)$(includedir)
+   Ohne diesen Bugfix kann man nicht sauber mit
+	make DESTDIR=&quot;/sandbox-root&quot; install
+   in einer Sandbox installieren.
+
+3. ManuProC_Widgets/macros/petig.m4 war veraltet; kompilieren geht erst,
+   nachdem man die Datei von ManuProC_Base/macros/petig.m4 kopiert hat.
+
+Sch&#246;ne Gr&#252;&#223;e
+Martin
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#268">[ date ]</a>
+              <a href="thread.html#268">[ thread ]</a>
+              <a href="subject.html#268">[ subject ]</a>
+              <a href="author.html#268">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

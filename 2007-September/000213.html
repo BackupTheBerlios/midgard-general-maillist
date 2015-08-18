@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] GNU-Lizenz benutzt obsoletes LaTeX
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2007-September/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20GNU-Lizenz%20benutzt%20obsoletes%20LaTeX&In-Reply-To=%3CPine.LNX.4.58.0709012154200.4151%40wmax001.mathematik.uni-wuerzburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000214.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] GNU-Lizenz benutzt obsoletes LaTeX</H1>
+    <B>Vaeth</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20GNU-Lizenz%20benutzt%20obsoletes%20LaTeX&In-Reply-To=%3CPine.LNX.4.58.0709012154200.4151%40wmax001.mathematik.uni-wuerzburg.de%3E"
+       TITLE="[MAGUS] GNU-Lizenz benutzt obsoletes LaTeX">vaeth at mathematik.uni-wuerzburg.de
+       </A><BR>
+    <I>Sat Sep  1 22:06:22 CEST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000214.html">[MAGUS] Status Magus f&#252;r Windows?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#213">[ date ]</a>
+              <a href="thread.html#213">[ thread ]</a>
+              <a href="subject.html#213">[ subject ]</a>
+              <a href="author.html#213">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+seit meinem Umstieg von tetex auf texlive habe ich zum ersten mal
+Magus neu kompiliert - und prompt blieb er bei der &#220;bersetzung der
+deutschen GNU-Lizenz magus/win32/gpl-ger.tex mit LaTeX h&#228;ngen,
+weil die texlive das obsolete Paket umlaut.sty nicht mehr enth&#228;lt:
+Seit vielen Jahren wurde dies durch [latin1]{inputenc} o.&#228;. abgel&#246;st.
+Und german.sty gibt es im Ausland auch nicht unbedingt auf jeder
+TeX-Installation - [german]{babel} ist hingegen standard.
+
+Beim Gentoo-Ebuild habe ich beide Probleme auf einmal mit folgendem
+simplen Patch gel&#246;st - vielleicht ist es eine gute Idee, diesen
+&quot;Bug&quot; auch im CVS zu fixen:
+
+sed -e 's/{german,umlaut}/[latin1]{inputenc}\\usepackage[german]{babel}/' 
+gpl-ger.tex.ori &gt;gpl-ger.tex
+
+Gr&#252;&#223;e
+Martin
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000214.html">[MAGUS] Status Magus f&#252;r Windows?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#213">[ date ]</a>
+              <a href="thread.html#213">[ thread ]</a>
+              <a href="subject.html#213">[ subject ]</a>
+              <a href="author.html#213">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

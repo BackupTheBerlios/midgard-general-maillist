@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Gesammelte Compilationsprobleme
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2008-August/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Gesammelte%20Compilationsprobleme&In-Reply-To=%3CPine.LNX.4.64.0808022100120.30526%40wmax001.mathematik.uni-wuerzburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000261.html">
+   <LINK REL="Next"  HREF="000263.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Gesammelte Compilationsprobleme</H1>
+    <B>Vaeth</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Gesammelte%20Compilationsprobleme&In-Reply-To=%3CPine.LNX.4.64.0808022100120.30526%40wmax001.mathematik.uni-wuerzburg.de%3E"
+       TITLE="[MAGUS] Gesammelte Compilationsprobleme">vaeth at mathematik.uni-wuerzburg.de
+       </A><BR>
+    <I>Sat Aug  2 21:30:47 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000261.html">[MAGUS] Magus und libsigc++
+</A></li>
+        <LI>Next message: <A HREF="000263.html">[MAGUS] Gesammelte Compilationsprobleme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#262">[ date ]</a>
+              <a href="thread.html#262">[ thread ]</a>
+              <a href="subject.html#262">[ subject ]</a>
+              <a href="author.html#262">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+ich wollte nur mal Feedback geben, was jetzt heute unter Gentoo
+so alles l&#228;uft/nicht l&#228;uft.
+
+Zun&#228;chst zwei Kleinigkeiten:
+
+1. Das File ManuProC_Widgets/macros/petig.m4
+   ist immer noch das veraltete.
+
+2. In midgard/tools/translate/translate.cc
+   fehlt f&#252;r gcc-4.3 ein
+   #include &lt;cstdlib&gt;
+   (sonst sind exit() und ein paar Konstanten nicht definiert)
+
+Danach l&#228;uft alles sauber durch, nur braucht man halt postgresql+libpq
+(und zwar sowohl zur Buildtime als auch zur Runtime, wie mir ein ldd
+versichert. Letzteres kann aber auch damit zusammenh&#228;ngen, dass
+LDFLAGS=--as-needed (s. unten) nicht m&#246;glich ist).
+
+Dein Tipp mit  --with-postgresdir=&quot;&quot; f&#252;hrt zu &#252;blen Fehlern;
+offensichtlich wird postgresql halt doch ben&#246;tigt.
+Hier zwei Beispiele f&#252;r solche Fehler (die offensichtlich an fehlenden
+#include's von postgresql-Headern liegen):
+
+./Misc/Query.h:76: error:
+  ISO C++ forbids declaration of &#8216;PGresult&#8217; with no type
+Datum.cc:415: error: &#8216;postgres_type&#8217; is not a member of
+  &#8216;Query_types::NullIf_s&lt;ManuProC::Datum&gt;&#8217;
+
+Das --enable-sqlite geht noch nicht, aber das d&#252;rfte ja bekannt sein.
+
+Noch zwei weitere Kleinigkeiten:
+
+a) Der gesamte Ordner midgard/docs muss derzeit noch manuell trotz
+   &quot;make install&quot; nach $DESTDIR/usr/share/magus kopiert werden.
+   Sollte das nicht eigentlich schon durch EXTRA_DIST=... o.&#228;.
+   im install-Target erledigt worden sein?
+
+b) Unter Gentoo erfreut sich LDFLAGS=-Wl,--as-needed grosser Beliebtheit,
+   weil das die Abh&#228;ngigkeiten senkt (und somit den Zwang zu
+   rekompilieren). Dort heisst es, i.d.R. ist etwas unsauber geschrieben,
+   wenn es dieses Flag nicht vertr&#228;gt. Ob das bei Magus unsauber ist,
+   kann ich nicht beurteilen, aber ich muss das Flag jedenfalls filtern,
+   weil es sonst so Fehler hagelt wie:
+
+./.libs/libmagus.so: undefined reference to `sigc::slot_base::slot_base()'
+./.libs/libmagus.so: undefined reference to
+`TagStream::utf82iso(std::basic_string&lt;char, std::char_traits&lt;char&gt;,
+std::allocator&lt;char&gt; &gt;&amp;)'
+./.libs/libmagus.so: undefined reference to `TagStream::TagStream()'
+
+Sch&#246;ne Gr&#252;&#223;e
+Martin V&#228;th
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000261.html">[MAGUS] Magus und libsigc++
+</A></li>
+	<LI>Next message: <A HREF="000263.html">[MAGUS] Gesammelte Compilationsprobleme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#262">[ date ]</a>
+              <a href="thread.html#262">[ thread ]</a>
+              <a href="subject.html#262">[ subject ]</a>
+              <a href="author.html#262">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

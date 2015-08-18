@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Gentoo: Overlay mv (mit Layman) fuer Magus
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Gentoo%3A%20Overlay%20mv%20%28mit%20Layman%29%20fuer%20Magus&In-Reply-To=%3CPine.LNX.4.64.1003301724150.1578%40wmax001.mathematik.uni-wuerzburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000292.html">
+   <LINK REL="Next"  HREF="000294.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Gentoo: Overlay mv (mit Layman) fuer Magus</H1>
+    <B>Vaeth</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Gentoo%3A%20Overlay%20mv%20%28mit%20Layman%29%20fuer%20Magus&In-Reply-To=%3CPine.LNX.4.64.1003301724150.1578%40wmax001.mathematik.uni-wuerzburg.de%3E"
+       TITLE="[MAGUS] Gentoo: Overlay mv (mit Layman) fuer Magus">vaeth at mathematik.uni-wuerzburg.de
+       </A><BR>
+    <I>Tue Mar 30 17:27:20 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000292.html">[MAGUS] Bug im Lernschema des Hexenj&#228;gers
+</A></li>
+        <LI>Next message: <A HREF="000294.html">[MAGUS] Gentoo: Overlay mv (mit Layman) fuer Magus
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#293">[ date ]</a>
+              <a href="thread.html#293">[ thread ]</a>
+              <a href="subject.html#293">[ subject ]</a>
+              <a href="author.html#293">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+Gentoo-Benutzer k&#246;nnen jetzt Magus ganz einfach &#252;ber Layman
+mit meinem nagelneuen mv-Overlay installieren:
+
+F&#252;r diejenigen, die sich mit Layman nicht auskennen, hier eine
+kurze Anleitung (einzutippende Befehle sind einger&#252;ckt):
+
+1. Layman installieren, falls noch nicht geschehen:
+	emerge layman
+
+2. Layman konfigurieren:
+(a) Ggf. /etc/layman/layman.cfg f&#252;r Sonderw&#252;nsche editieren.
+(b) In /etc/make.conf (ggf. *nach* Setzen von PORTDIR_OVERLAY) die Zeile
+
+source /var/lib/layman/make.conf
+
+einf&#252;gen. Der Pfad ist u.U. anzupassen (s. &quot;storage&quot; bzw. &quot;make_conf&quot;
+in der Datei layman.cfg; beachte, dass der Default in neueren
+Layman-Versionen anders ist als in &#228;lteren).
+
+3. Laymans overlay.xml Datei aktualisieren (der mv-Overlay ist neu,
+also vermutlich auch bei fr&#252;her installiertem Layman noch nicht in
+dieser Datei enthalten):
+	layman -f
+
+4. Den mv-Overlay holen:
+	layman -a mv
+
+5. Benutzer von eix k&#246;nnen jetzt die Datenbank aktualisieren:
+	eix-update
+
+Jetzt sollte games-rpg/magus-live fuer eix und portage verf&#252;gbar sein.
+Bei jedem emerge des Pakets werden die Sourcen vom monotone-Repository
+aktualisiert (dies ist ja der Zweck von Live-Ebuilds). Soll dies nicht
+geschehen, bitte die Variable
+	ESCM_OFFLINE=1
+oder
+	EMTN_OFFLINE=1
+setzen (tempor&#228;r in der Environment oder permanent in /etc/make.conf).
+Der Unterschied zwischen den beiden Variablen ist, dass sich die erste
+auf alle Live-Ebuilds auswirkt, die zweite nur auf diejenigen, die
+monotone benutzen (das ist derzeit nur magus-live)
+
+6. Um das Ebuild upzudaten (ich werde es vermutlich hin und wider
+aktualisieren, ohne das jeweils hier auf der Liste anzumelden), kann
+	layman -s mv
+aufgerufen werden, oder einfacher:
+eix-sync (statt emerge --sync) benutzen und die Zeile
+
+mv
+
+in /etc/eix-sync.conf (ggf. muss diese Datei neu angelegt werden)
+einf&#252;gen.
+
+Sch&#246;ne Gr&#252;&#223;e
+Martin V&#228;th
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000292.html">[MAGUS] Bug im Lernschema des Hexenj&#228;gers
+</A></li>
+	<LI>Next message: <A HREF="000294.html">[MAGUS] Gentoo: Overlay mv (mit Layman) fuer Magus
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#293">[ date ]</a>
+              <a href="thread.html#293">[ thread ]</a>
+              <a href="subject.html#293">[ subject ]</a>
+              <a href="author.html#293">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

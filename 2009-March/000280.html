@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Build error mit ebuild magus-live-1.3.1-r2
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2009-March/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Build%20error%20mit%20ebuild%20magus-live-1.3.1-r2&In-Reply-To=%3C20090314200533.GA33977%40karnevil9.amarok.ping.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000281.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Build error mit ebuild magus-live-1.3.1-r2</H1>
+    <B>Oliver B. Warzecha</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Build%20error%20mit%20ebuild%20magus-live-1.3.1-r2&In-Reply-To=%3C20090314200533.GA33977%40karnevil9.amarok.ping.de%3E"
+       TITLE="[MAGUS] Build error mit ebuild magus-live-1.3.1-r2">obw at amarok.ping.de
+       </A><BR>
+    <I>Sat Mar 14 21:05:34 CET 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000281.html">[MAGUS] Build error mit ebuild magus-live-1.3.1-r2
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#280">[ date ]</a>
+              <a href="thread.html#280">[ thread ]</a>
+              <a href="subject.html#280">[ subject ]</a>
+              <a href="author.html#280">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+ich habe hier einen build-Error mit dem besagten Paket, und dachte,
+ich frage mal hier in die Liste, vielleicht hat jemand spontan eine
+L&#246;sung parat. 
+
+Nein, manuelles &#220;bersetzen habe ich noch nicht versucht, ich bin
+froh, dass Martin den ebuild geschrieben hat. ;-) Danke an dieser
+Stelle daf&#252;r. Nat&#252;rlich werde ich das machen, wenn das die einzige
+L&#246;sung ist, aber ich gebe die Hoffnung noch nicht auf.
+
+Die eingebundene Datei ist aus der glibc-2.8-p20080602-r1, der Fehler
+trat aber auch schon bei der glibc-2.6.1 auf, ich habe extra gewartet,
+ob nicht vielleicht eine zu alte glibc dran schuld w&#228;re. :-/
+gcc ist ein 4.1.2
+
+Die letzten Zeilen aus dem build.log, die nicht vom ebuild als Fehler-
+nachricht ausgegeben werden:
+mv -f .deps/GType_cH_EntryValue.Tpo .deps/GType_cH_EntryValue.Po
+i686-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -D_REENTRANT -I/usr/include/gt
+kmm-2.4 -I/usr/lib/gtkmm-2.4/include -I/usr/include/glibmm-2.4 -I/usr/lib/glibmm
+-2.4/include -I/usr/include/gdkmm-2.4 -I/usr/lib/gdkmm-2.4/include -I/usr/includ
+e/pangomm-1.4 -I/usr/include/gtk-2.0 -I/usr/include/sigc++-2.0 -I/usr/lib/sigc++
+-2.0/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/lib/gtk-
+2.0/include -I/usr/include/cairomm-1.0 -I/usr/include/pango-1.0 -I/usr/include/c
+airo -I/usr/include/freetype2 -I/usr/include/directfb -I/usr/include/libpng12 -I
+/usr/include/pixman-1 -I/usr/include/atk-1.0   -I/var/tmp/portage/games-rpg/magu
+s-live-1.3.1-r2/work/magus-live-1.3.1/GtkmmAddons/src -I/var/tmp/portage/games-r
+pg/magus-live-1.3.1-r2/work/magus-live-1.3.1/ManuProC_Base/src   -I. -I/usr/incl
+ude/postgresql/pgsql -march=athlon-xp -O -pipe -MT SimpleTree.o -MD -MP -MF .dep
+s/SimpleTree.Tpo -c -o SimpleTree.o SimpleTree.cc
+/usr/include/libintl.h:40: error: expected unqualified-id before 'const'
+/usr/include/libintl.h:40: error: expected `)' before 'const'
+/usr/include/libintl.h:40: error: expected initializer before 'const'
+/usr/include/libintl.h:45: error: expected unqualified-id before 'const'
+/usr/include/libintl.h:45: error: expected `)' before 'const'
+/usr/include/libintl.h:45: error: expected initializer before 'const'
+/usr/include/libintl.h:52: error: expected unqualified-id before 'const'
+/usr/include/libintl.h:52: error: expected `)' before 'const'
+/usr/include/libintl.h:52: error: expected initializer before 'const'
+/usr/include/libintl.h:83: error: expected unqualified-id before 'const'
+/usr/include/libintl.h:83: error: expected `)' before 'const'
+/usr/include/libintl.h:83: error: expected initializer before 'const'
+/usr/include/libintl.h:87: error: expected unqualified-id before 'const'
+/usr/include/libintl.h:87: error: expected `)' before 'const'
+/usr/include/libintl.h:87: error: expected initializer before 'const'
+make[3]: *** [SimpleTree.o] Error 1
+make[3]: Leaving directory `/var/tmp/portage/games-rpg/magus-live-1.3.1-r2/work/magus-live-1.3.1/ManuProC_Widgets/src'
+make[2]: *** [all] Error 2
+make[2]: Leaving directory `/var/tmp/portage/games-rpg/magus-live-1.3.1-r2/work/magus-live-1.3.1/ManuProC_Widgets/src'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/var/tmp/portage/games-rpg/magus-live-1.3.1-r2/work/magus-live-1.3.1/ManuProC_Widgets'
+make: *** [all] Error 2
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000281.html">[MAGUS] Build error mit ebuild magus-live-1.3.1-r2
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#280">[ date ]</a>
+              <a href="thread.html#280">[ thread ]</a>
+              <a href="subject.html#280">[ subject ]</a>
+              <a href="author.html#280">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

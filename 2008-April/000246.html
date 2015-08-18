@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Magus und gcc-4.3
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2008-April/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Magus%20und%20gcc-4.3&In-Reply-To=%3CPine.LNX.4.64.0804012015010.7059%40wmax001.mathematik.uni-wuerzburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000247.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Magus und gcc-4.3</H1>
+    <B>Vaeth</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Magus%20und%20gcc-4.3&In-Reply-To=%3CPine.LNX.4.64.0804012015010.7059%40wmax001.mathematik.uni-wuerzburg.de%3E"
+       TITLE="[MAGUS] Magus und gcc-4.3">vaeth at mathematik.uni-wuerzburg.de
+       </A><BR>
+    <I>Tue Apr  1 20:29:02 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000247.html">[MAGUS] MAGUS - Bugreport - 23 Apr 08
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#246">[ date ]</a>
+              <a href="thread.html#246">[ thread ]</a>
+              <a href="subject.html#246">[ subject ]</a>
+              <a href="author.html#246">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo:
+
+&gt;<i> &gt; Mit gcc-4.3 kann ich auf jeden Fall das aktuelle magus-live.ebuild
+</I>&gt;<i> &gt; (d.h. mit Zugriff auf das monotone repository) nicht &#252;bersetzen:
+</I>&gt;<i> 
+</I>&gt;<i> Steht noch auf meiner Liste ...
+</I>
+Ich habe mal mit den Fixes f&#252;r gcc-4.3 angefangen - Patch h&#228;ngt an.
+I.W. waren es bislang nur fehlende oder falsche #include's
+und ein falsche &quot;static&quot;s bei template-Spezialisierungen.
+
+Was sich als unangenehmer herausgestellt hat, sind die Inkompatibilit&#228;ten
+zu libsigc++-2.2.2 (die als einzige gcc-4.3-tauglich ist):
+Dort wurden offensichtlich alle Gro&#223;buchstaben in Kleinbuchstaben
+konvertiert (z.B. sigc::signal1 statt SigC::Signal1), damit man auch
+sicher alle Programme neu schreiben muss - was f&#252;r ein Gepfusche!
+(Es ist f&#252;r mich definitiv ein Grund, nichts in gtk programmieren zu
+wollen, wenn die Programme damit *so* wenig zukunftssicher sind).
+
+Ich habe das im Patch mal quick'n'dirty mit &quot;#define SigC sigc&quot; usw.
+gel&#246;st. Nachdem aber sigc::signal in GtkmmAddons/src/WinFileReq_glade.cc
+anscheinend neuerdings ein Template-Argument braucht (und ohnehin der
+sigc-Hack aus GtkmmAddons/src/WinFileReq.cc anscheinend nicht mehr geht)
+habe ich die Lust verloren, noch weiter zu patchen.
+
+Der Patch wird vermutlich auch so schon etwas Arbeit sparen
+(wenngleich die neuen sigc-Hacks sicher von weiteren Versionstests
+abh&#228;ngig sein sollten).
+
+Sch&#246;ne Gr&#252;&#223;e
+Martin
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: magus-live-gcc-4.3.patch
+Type: text/x-patch
+Size: 7436 bytes
+Desc: 
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/midgard-general/attachments/20080401/d32d30aa/attachment.bin">https://lists.berlios.de/pipermail/midgard-general/attachments/20080401/d32d30aa/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000247.html">[MAGUS] MAGUS - Bugreport - 23 Apr 08
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#246">[ date ]</a>
+              <a href="thread.html#246">[ thread ]</a>
+              <a href="subject.html#246">[ subject ]</a>
+              <a href="author.html#246">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

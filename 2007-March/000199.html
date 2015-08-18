@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] MAGUS - Bugreport - 23 Mar 07
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20MAGUS%20-%20Bugreport%20-%2023%20Mar%2007&In-Reply-To=%3C1174663609l.4368l.1l%40blueeye%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000198.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] MAGUS - Bugreport - 23 Mar 07</H1>
+    <B>Alessandro Filippetti</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20MAGUS%20-%20Bugreport%20-%2023%20Mar%2007&In-Reply-To=%3C1174663609l.4368l.1l%40blueeye%3E"
+       TITLE="[MAGUS] MAGUS - Bugreport - 23 Mar 07">sandro at filippetti.de
+       </A><BR>
+    <I>Fri Mar 23 16:26:44 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000198.html">[MAGUS] MAGUS - Bugreport - 23 Mar 07
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#199">[ date ]</a>
+              <a href="thread.html#199">[ thread ]</a>
+              <a href="subject.html#199">[ subject ]</a>
+              <a href="author.html#199">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Am 23.03.2007 15:42:10 schrieb(en) <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">magus at sulvahir.de</A>:
+&gt;<i> 
+</I>&gt;<i> Dieser Bugreport wurde generiert von:
+</I>&gt;<i> <A HREF="http://midgard.berlios.de/pages/bugform.html">http://midgard.berlios.de/pages/bugform.html</A>
+</I>&gt;<i> Antworten bitte _nur_ an <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">sascha.cenani at gmx.de</A> (und ggf. an die Liste)
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ABSENDER: Sascha Cenani, <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">sascha.cenani at gmx.de</A>
+</I>&gt;<i> BETRIEBSSYSTEM: Windows 2000  x86 (intel/amd 32bit)
+</I>&gt;<i> MAGUS-Version: 0.8.23
+</I>&gt;<i> Quelle: .exe Installer-Paket
+</I>&gt;<i> Version: magus_0823w0.exe
+</I>&gt;<i> 
+</I>&gt;<i> Der Fehler ist reproduzierbar.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Fehlerbeschreibung:
+</I>&gt;<i> 
+</I>&gt;<i> Magus \&quot;vergisst\&quot; welche PDF-Exe er nutzen soll.
+</I>&gt;<i> 
+</I>&gt;<i> Wenn ich dann in Optionen gehe, und das PDF-Programm (Adobe Acrobat
+</I>&gt;<i> Reader 7.8) angebe geht es.
+</I>&gt;<i> 
+</I>&gt;<i> Wenn ich Magus aber dann schliesse, und sp&#228;ter wieder &#246;ffne, ist diese
+</I>&gt;<i> Einstellung weg, und ich darf es wieder eingeben.
+</I>&gt;<i> 
+</I>&gt;<i> Kann man an der Tatsache das er die Einstellung zum PDF-Reader immer
+</I>&gt;<i> vergisst was machen?
+</I>
+&#214;ffne mal magus/Daten/magus_optionen.xml mit einem Editor (nicht Word!)  
+und schaue, wie der Eintrag f&#252;r den pdfViewer aussieht.
+
+Die Voreinstellung sieht sieht so aus:
+
+'&lt;pdfViewer Name=&quot;PDF Programm&quot; Wert=&quot;true&quot;/&gt;'
+
+Wenn der Eintrag bei dir genauso aussieht, mu&#223;t du &quot;PDF Programm&quot; durch
+&quot;acrord32.exe&quot; ersetzen (und gegebenenfalls den Pfad noch eintragen).
+
+bis dann,
+	Sandro
+- -- 
+gpg-key id: 0x5CC721CD available at: <A HREF="http://pgp.mit.edu/">http://pgp.mit.edu/</A>
+&quot;1984&quot; is NOT a HOWTO!
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFGA/G50Y6KeVzHIc0RAqHBAJ46Dv5OwrV5v+pnnxezgaYO28mYVwCgp764
+LHP6pdK/TRycwRODTjkODiU=
+=83aW
+-----END PGP SIGNATURE-----
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000198.html">[MAGUS] MAGUS - Bugreport - 23 Mar 07
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#199">[ date ]</a>
+              <a href="thread.html#199">[ thread ]</a>
+              <a href="subject.html#199">[ subject ]</a>
+              <a href="author.html#199">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

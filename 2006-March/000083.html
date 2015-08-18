@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Re: Fehler in ManuProC_Widgets
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2006-March/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Re%3A%20Fehler%20in%20ManuProC_Widgets&In-Reply-To=%3C441098D1.1000000%40petig-baender.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000082.html">
+   <LINK REL="Next"  HREF="000084.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Re: Fehler in ManuProC_Widgets</H1>
+    <B>Christof Petig</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Re%3A%20Fehler%20in%20ManuProC_Widgets&In-Reply-To=%3C441098D1.1000000%40petig-baender.de%3E"
+       TITLE="[MAGUS] Re: Fehler in ManuProC_Widgets">christof at petig-baender.de
+       </A><BR>
+    <I>Thu Mar  9 22:06:25 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000082.html">[MAGUS] Magus bei Google
+</A></li>
+        <LI>Next message: <A HREF="000084.html">[MAGUS] Re: Fehler in ManuProC_Widgets
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#83">[ date ]</a>
+              <a href="thread.html#83">[ thread ]</a>
+              <a href="subject.html#83">[ subject ]</a>
+              <a href="author.html#83">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Alessandro Filippetti wrote:
+&gt;<i> Hi Christof!
+</I>&gt;<i> 
+</I>&gt;<i> Bei mir gibt es mal wieder einen Fehler beim Kompilieren von
+</I>&gt;<i> ManuProC_Widgets:
+</I>&gt;<i> 
+</I>&gt;<i> In file included from
+</I>&gt;<i> /usr/include/g++/x86_64-suse-linux/bits/c++locale.h:44,
+</I>&gt;<i>                  from /usr/include/g++/iosfwd:46,
+</I>&gt;<i>                  from /usr/include/g++/bits/stl_algobase.h:70,
+</I>&gt;<i>                  from /usr/include/g++/list:67,
+</I>&gt;<i>                  from /opt/gnome/include/sigc++-2.0/sigc++/signal.h:7,
+</I>&gt;<i>                  from
+</I>&gt;<i> /opt/gnome/include/sigc++-2.0/sigc++/compatibility.h:22,
+</I>&gt;<i>                  from IntStringBox_glade.cc:39:
+</I>&gt;<i> /usr/include/libintl.h:40: error: Syntaxfehler before `__const'
+</I>&gt;<i> /usr/include/libintl.h:44: error: Syntaxfehler before `__const'
+</I>&gt;<i> /usr/include/libintl.h:51: error: Syntaxfehler before `__const'
+</I>&gt;<i> /usr/include/libintl.h:81: error: Syntaxfehler before `__const'
+</I>&gt;<i> /usr/include/libintl.h:85: error: Syntaxfehler before `__const'
+</I>&gt;<i> make[3]: *** [IntStringBox_glade.o] Unterbrechung
+</I>
+Zitiere mich vom 18.11.
+&gt;<i> behoben: #include &lt;libintl.h&gt; als zweite Zeile (bevor andere Dinge
+</I>&gt;<i> includet werden).
+</I>
+Das glaube ich aber nicht, dass es in diesem Fall hilft ...
+den immerhin handelt es sich um ein automatisch generiertes file ...
+
+Entweder habe ich irgendetwas irgendwo (genauer wei&#223; ich es auch nicht)
+unbeabsichtigt erwischt, oder ein automatisch generiertes File ist nicht
+korrekt erzeugt worden, oder ...
+
+Immerhin liegt dieser Bug definitiv in gettext oder sigc++!
+
+Moment, jetzt habe ich zwei Version dieser Datei ... ich checke mal ein,
+vielleicht hat es sich dann erledigt!
+
+   Christof
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 254 bytes
+Desc: OpenPGP digital signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/midgard-general/attachments/20060309/6e1c450a/attachment.pgp">https://lists.berlios.de/pipermail/midgard-general/attachments/20060309/6e1c450a/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000082.html">[MAGUS] Magus bei Google
+</A></li>
+	<LI>Next message: <A HREF="000084.html">[MAGUS] Re: Fehler in ManuProC_Widgets
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#83">[ date ]</a>
+              <a href="thread.html#83">[ thread ]</a>
+              <a href="subject.html#83">[ subject ]</a>
+              <a href="author.html#83">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

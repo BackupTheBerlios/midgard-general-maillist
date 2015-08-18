@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] [Fwd: MagusGeschichte]
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2006-February/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20%5BFwd%3A%20MagusGeschichte%5D&In-Reply-To=%3C43F9A03A.9090508%40petig-baender.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000050.html">
+   <LINK REL="Next"  HREF="000055.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] [Fwd: MagusGeschichte]</H1>
+    <B>Christof Petig</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20%5BFwd%3A%20MagusGeschichte%5D&In-Reply-To=%3C43F9A03A.9090508%40petig-baender.de%3E"
+       TITLE="[MAGUS] [Fwd: MagusGeschichte]">christof at petig-baender.de
+       </A><BR>
+    <I>Mon Feb 20 11:55:54 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000050.html">[MAGUS] Re: Magus 0.9.9.13 f&#252;r Windows
+</A></li>
+        <LI>Next message: <A HREF="000055.html">[MAGUS] Q: PP und Abwehr steigern, Zaubern mit Spruchrolle
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#46">[ date ]</a>
+              <a href="thread.html#46">[ thread ]</a>
+              <a href="subject.html#46">[ subject ]</a>
+              <a href="author.html#46">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>@Alessandro: Dies habe ich als docs/Geschichte.html eingecheckt,
+k&#246;nntest Du das irgendwo wo es sinnvoll ist auftauchen lassen?
+
+@Malte: Vergleiche bitte mal den Text mit deiner Erinnerung
+
+  Gr&#252;&#223;e
+     Christof
+
+-------- Original Message --------
+Subject: MagusGeschichte
+Date: Sun, 19 Feb 2006 01:44:26 +0100
+From: Christof Petig &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">christof at petig-baender.de</A>&gt;
+Organization: Adolf Petig GmbH &amp; Co. KG
+To: Christof Petig &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">christof at petig-baender.de</A>&gt;
+
+
+  Die Geschichte von MAGuS
+
+Magus begann als Projekt von Malte Thoma um C++,
+Oberfl&#228;chenprogrammierung und Datenbankanbindung zu erlernen. Sein
+damaliger Vorgesetzter Christof Petig ermunterte ihn, sich doch selbst
+eine Aufgabe auszudenken, an der er diese F&#228;higkeiten erlernen und
+erwerben und erproben k&#246;nnte. So kam es dazu, dass er ein Programm
+schrieb, um seine Midgard Abenteurer am Rechner zu verwalten. Die erste
+Version erm&#246;glichte es, einen Abenteurer einzugeben und in einer
+PostgreSQL Datenbank abzulegen. Die Vorgaben waren eindeutig: Das
+Programm musste unter Linux laufen, in C++ geschrieben sein, die
+Oberfl&#228;che mit glade erstellt und mit gtkmm programmiert sein.
+
+Bereits zu Beginn konnten die Fertigkeiten aus einer Liste ausgew&#228;hlt
+werden, schnell fanden sich weitere Begeisterte, die mithalfen, die
+Tabellen abzutippen. Alessandro malte Icons, Christof versprach, das
+Programm nach Windows zu portieren. Die ersten Grafiken wurden im xpm
+Format erstellt, das recht speicherhungrig ist und eine beschr&#228;nkte
+Anzahl an Farben effizient erlaubt. Reste dieser Geschichte sind noch
+heute an Grafiken zu entdecken.
+
+Die Portierung nach Windows brachte die &#196;nderung nach XML und Unicode
+mit sich. Eine Windows Version von PostgreSQL existierte noch nicht
+(au&#223;er mittels der POSIX Umgebung Cygwin) und SQLite war noch in den
+Kinderschuhen. Daher wurden XML Dateien aus der Datenbank erzeugt und
+dann eingelesen. Die Unicode codierung einzig des Windows Ports bewirkte
+am Anfang auch einige nur unter Windows auftretende Probleme.
+
+Compiliert wird die Windows Version mit dem MinGW (Minimal GNU Compiler
+for Windows) Compiler in der MSys (Minimal System) shell. Cygwin h&#228;tte
+bewirkt, dass die Dateinamen in der Unix Konvention (//c/windows)
+anzugeben gewesen w&#228;ren, eine unzumutbare H&#252;rde f&#252;r den einfachen
+Nutzer. Wie die Linux Version verwendet die Windows Version LaTeX um den
+Abenteurer nach PDF zu wandeln. Ein Acrobat Reader um die Dateien zu
+drucken, d&#252;rfte auf jedem Windows Rechner vorhanden sein.
+
+Ulf Kaiser stellte einige Icons in einem Windows gerechteren Design zur
+Verf&#252;gung, weitere Leute tippten die Daten aus Quellenb&#252;cher ab. Von
+Version 0.7 zu 0.8 wurde auf die vierte Ausgabe des Regelheftes umgestellt.
+
+Auf Betreiben von Malte hin, sollte Magus zum Standard f&#252;r Midgard
+Programme werden, und so wurde ein Vertrag mit Elsa Franke
+unterzeichnet,der Magus gestattet, die Daten auch im Internet zur
+Verf&#252;gung zu stellen und festschrieb, dass MAGuS unter der GPL
+erscheinen sollte.
+
+Dann kam Christof auf die Idee, eine neuere Version von gtk zu
+verwenden, die auch unter Linux Unicode verwendet, JPG, PNG, GIF und SVG
+Grafiken verwenden kann, das Model-View-Controller Konzept anbietet und
+weitere Detailverbesserunge bot. Gleichzeitig wollte er den Code in eine
+Library ausgr&#252;nden, die auch von anderen Projekten verwendet werden
+k&#246;nnte. Zus&#228;tzlich sollte auch MAGuS das MVC Konzept und ein echte MDI
+(Multiple Document Interface) und Undo/Redo bekommen. Durch diese
+Umstellung kam die Weiterentwicklung des alten MAGuS 0.8 zum Erliegen.
+
+Nach einigen Jahren (!) Entwicklungsarbeit stellte Christof dann die
+neue Version vor, die noch gen&#252;gend Fehler aufwies, um nicht allgemein
+einsetzbar zu sein. Erst wiederum ein Jahr sp&#228;ter (im Januar 2006)
+sollte die Version dann zufriedenstellend funktionieren, zu tiefgreifend
+waren die Umstellungen. Berufliche Ver&#228;nderungen bei Christof und Malte
+behinderten die Arbeit zus&#228;tzlich.
+
+Mitlerweile existieren automatische Tests und ein externes Programm um
+schnell Zufallscharaktere zu erzeugen. Eine weitergehende Verwendung der
+Library wird dadurch erschwert, dass sie in C++ mit dem Gnu Compiler
+&#252;bersetzt ist, eine COM Anbindung w&#228;re m&#246;glich (Anfragen an Christof).
+Es ist zwar m&#246;glich, MAGuS weiterzuentwickeln oder seine Funktionen in
+eigenen Programmen zu nutzen, ohne zus&#228;tzliche Software zu kaufen (alles
+Notwendige ist kostenlos im Internet verf&#252;gbar), unter Windows hat
+allerdings noch niemand diesen Schritt gewagt.
+
+Viele Merkw&#252;rdigkeiten der Oberfl&#228;che und Bedienung sind durch diese
+Geschichte bedingt und ein f&#252;r Windows geschriebenes Programm w&#252;rde mit
+Sicherheit besser mit anderen Anwendungen harmonieren, Christof bem&#252;ht
+sich aber nach Kr&#228;ften um einen Kompromiss.
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 254 bytes
+Desc: OpenPGP digital signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/midgard-general/attachments/20060220/ce368c5b/attachment.pgp">https://lists.berlios.de/pipermail/midgard-general/attachments/20060220/ce368c5b/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000050.html">[MAGUS] Re: Magus 0.9.9.13 f&#252;r Windows
+</A></li>
+	<LI>Next message: <A HREF="000055.html">[MAGUS] Q: PP und Abwehr steigern, Zaubern mit Spruchrolle
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#46">[ date ]</a>
+              <a href="thread.html#46">[ thread ]</a>
+              <a href="subject.html#46">[ subject ]</a>
+              <a href="author.html#46">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

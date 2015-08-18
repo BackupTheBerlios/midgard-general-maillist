@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] 1.3.3 Fehler beim Steigern von Landeskunde/Muszieren.... Magus h&#228;ngt
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2013-September/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20%3D%3Fiso-8859-15%3Fq%3F1%3D2E3%3D2E3_Fehler_beim_Steigern_von_Landes%3F%3D%0A%20%3D%3Fiso-8859-15%3Fq%3Fkunde/Muszieren%3D2E%3D2E%3D2E%3D2E_Magus_h%3DE4ngt%3F%3D&In-Reply-To=%3C52260F20.8040003%40jungle.kn-bremen.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] 1.3.3 Fehler beim Steigern von Landeskunde/Muszieren.... Magus h&#228;ngt</H1>
+    <B>Panther</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20%3D%3Fiso-8859-15%3Fq%3F1%3D2E3%3D2E3_Fehler_beim_Steigern_von_Landes%3F%3D%0A%20%3D%3Fiso-8859-15%3Fq%3Fkunde/Muszieren%3D2E%3D2E%3D2E%3D2E_Magus_h%3DE4ngt%3F%3D&In-Reply-To=%3C52260F20.8040003%40jungle.kn-bremen.de%3E"
+       TITLE="[MAGUS] 1.3.3 Fehler beim Steigern von Landeskunde/Muszieren.... Magus h&#228;ngt">panther at jungle.kn-bremen.de
+       </A><BR>
+    <I>Tue Sep  3 18:32:32 CEST 2013</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#307">[ date ]</a>
+              <a href="thread.html#307">[ thread ]</a>
+              <a href="subject.html#307">[ subject ]</a>
+              <a href="author.html#307">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+
+Ich will bei 1.3.3 eine neue Landeskunde oder eine neues Musikinstrument 
+lernen, doch dann h&#228;ngt Magus...
+
+In table_steigern_main.cc nun folgerndes
+
+Code:
+
+MBE_T::st_zusatz const&amp; table_steigern::Auswahl_neu(void* obj,
+                 std::vector&lt;MBE_T::st_zusatz&gt; const&amp; list, std::string 
+const&amp; title)
+{
+   table_steigern *ths=(table_steigern*)obj;
+   ths-&gt;datavec_zusatz=list;
+
+Nach dieser Zeile ist eigentlich schon alles passiert, die liste sollte 
+nicht leer sein...
+
+Entweder die Liste aller L&#228;nder oder die Liste aller Musikinstrumente im 
+Angebot.
+Doch bei Musik ist die Size = 0, bei L&#228;ndern = 26, aber dargestellt 
+werden sie beide nicht
+
+Warum?
+
+Panther
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#307">[ date ]</a>
+              <a href="thread.html#307">[ thread ]</a>
+              <a href="subject.html#307">[ subject ]</a>
+              <a href="author.html#307">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

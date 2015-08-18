@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Gesammelte Compilationsprobleme
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2008-August/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Gesammelte%20Compilationsprobleme&In-Reply-To=%3CPine.LNX.4.64.0808022151420.30760%40wmax001.mathematik.uni-wuerzburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000262.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Gesammelte Compilationsprobleme</H1>
+    <B>Vaeth</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Gesammelte%20Compilationsprobleme&In-Reply-To=%3CPine.LNX.4.64.0808022151420.30760%40wmax001.mathematik.uni-wuerzburg.de%3E"
+       TITLE="[MAGUS] Gesammelte Compilationsprobleme">vaeth at mathematik.uni-wuerzburg.de
+       </A><BR>
+    <I>Sat Aug  2 22:03:11 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000262.html">[MAGUS] Gesammelte Compilationsprobleme
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#263">[ date ]</a>
+              <a href="thread.html#263">[ thread ]</a>
+              <a href="subject.html#263">[ subject ]</a>
+              <a href="author.html#263">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Noch ein Nachtrag:
+
+i) Bei einem &quot;sauberen&quot; Neuinstallieren bekam ich gerade eine
+   Sandbox-Violation. Grund: Im File ManuProC_Base/src/Makefile.am
+   steht im &quot;install-data-hook&quot; noch dreimal
+      cd $(includedir) ; ln -sf . [...]
+   Dort sollte vermutlich jeweils
+      cd $(DESTDIR)$(includedir) ; ln -sf . [...]
+   stehen.
+
+ii) Zwar f&#252;rchte ich, dass man da nichts machen kann, aber melden tue
+   ich es trotzdem: Mit 512 MB l&#228;sst sich magus praktisch nur mit der
+   Option -O0 kompilieren - sonst brauchen einige glade-Files so um
+   die 1 GB Speicher und sind mit swap dann selbst nach etlichen
+   Stunden Kompilationszeit noch nicht fertig. Wenn eine Aufspaltung in
+   kleinere Files schmerzfrei ist, w&#252;rde ich sehr stark daf&#252;r pl&#228;dieren...
+
+Sch&#246;ne Gr&#252;&#223;e
+Martin
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000262.html">[MAGUS] Gesammelte Compilationsprobleme
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#263">[ date ]</a>
+              <a href="thread.html#263">[ thread ]</a>
+              <a href="subject.html#263">[ subject ]</a>
+              <a href="author.html#263">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

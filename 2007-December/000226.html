@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Public monotone server for magus available
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2007-December/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Public%20monotone%20server%20for%20magus%20available&In-Reply-To=%3C47684775.30207%40arcor.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000225.html">
+   <LINK REL="Next"  HREF="000227.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Public monotone server for magus available</H1>
+    <B>Christof Petig</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Public%20monotone%20server%20for%20magus%20available&In-Reply-To=%3C47684775.30207%40arcor.de%3E"
+       TITLE="[MAGUS] Public monotone server for magus available">christof.petig at arcor.de
+       </A><BR>
+    <I>Tue Dec 18 23:19:33 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000225.html">[MAGUS] MAGUS - Bugreport - 18 Dec 07
+</A></li>
+        <LI>Next message: <A HREF="000227.html">[MAGUS] Public monotone server for magus available
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#226">[ date ]</a>
+              <a href="thread.html#226">[ thread ]</a>
+              <a href="subject.html#226">[ subject ]</a>
+              <a href="author.html#226">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Hallo,
+
+Ich habe gerade einen &#246;ffentlichen Server eingerichtet, auf dem die
+aktuelle Entwicklerversion von Magus tagesaktuell zu bekommen ist.
+
+Monotone gibt es unter
+<A HREF="http://monotone.ca/downloads/0.38/mtn-0.38-linux-x86.bz2">http://monotone.ca/downloads/0.38/mtn-0.38-linux-x86.bz2</A>
+
+$ mtn -d magus.db db init
+$ mtn -d magus.db pull petig-baender.dyndns.org \*
+mtn: setting default branch include pattern to '*'
+mtn: setting default branch exclude pattern to ''
+mtn: doing anonymous pull; use -kKEYNAME if you need authentication
+mtn: connecting to petig-baender.dyndns.org
+mtn: first time connecting to server petig-baender.dyndns.org
+mtn: I'll assume it's really them, but you might want to double-check
+mtn: their key's fingerprint: 07fc9fb73a28bd5b18bf6e550cb6f6b34a1c6e8d
+mtn: warning: saving public key for <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">monotone at petig-baender.dyndns.org</A> to
+database
+mtn: finding items to synchronize:
+mtn:  bytes in | bytes out | certs in | revs in
+mtn:     2,7 k |       462 |        0 |       0
+mtn:  bytes in | bytes out |    certs in | revs in
+mtn:    18,9 M |       510 | 3.805/3.805 | 799/799
+mtn: successful exchange with petig-baender.dyndns.org
+
+$ mtn -d magus.db -b manuproc.berlios.de/ManuProC_Base co ManuProC_Base
+$ mtn -d magus.db -b manuproc.berlios.de/GtkmmAddons co GtkmmAddons
+$ mtn -d magus.db -b manuproc.berlios.de/ManuProC_Widgets co
+ManuProC_Widgets
+$ mtn -d magus.db -b midgard.berlios.de/midgard co midgard
+
+Es ist auch m&#246;glich auf diesen Server hochzuladen (bitte einfach einen
+monotone key (mtn genkey <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">mail at address.de</A> ; mtn pubkey <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">mail at address.de</A>))
+an mich senden, dann schalte ich ihn frei.
+
+   Christof
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+Comment: Using GnuPG with Mozilla - <A HREF="http://enigmail.mozdev.org">http://enigmail.mozdev.org</A>
+
+iD8DBQFHaEd0ng+R+0ucfO0RAvPnAKCttBnDp4rCojiUmZ26OocEtXeY9ACdE1Nj
+VOcu4OEoUi22ufVhdw/+88U=
+=6E7r
+-----END PGP SIGNATURE-----
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000225.html">[MAGUS] MAGUS - Bugreport - 18 Dec 07
+</A></li>
+	<LI>Next message: <A HREF="000227.html">[MAGUS] Public monotone server for magus available
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#226">[ date ]</a>
+              <a href="thread.html#226">[ thread ]</a>
+              <a href="subject.html#226">[ subject ]</a>
+              <a href="author.html#226">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] MAGUS - Bugreport - 14 Aug 06
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2006-August/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20MAGUS%20-%20Bugreport%20-%2014%20Aug%2006&In-Reply-To=%3C200608141913.k7EJD4bv003616%40unicorn.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000134.html">
+   <LINK REL="Next"  HREF="000137.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] MAGUS - Bugreport - 14 Aug 06</H1>
+    <B>magus at sulvahir.de</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20MAGUS%20-%20Bugreport%20-%2014%20Aug%2006&In-Reply-To=%3C200608141913.k7EJD4bv003616%40unicorn.berlios.de%3E"
+       TITLE="[MAGUS] MAGUS - Bugreport - 14 Aug 06">magus at sulvahir.de
+       </A><BR>
+    <I>Mon Aug 14 21:13:04 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000134.html">[MAGUS] magus
+</A></li>
+        <LI>Next message: <A HREF="000137.html">[MAGUS] MAGUS - Bugreport - 14 Aug 06
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#135">[ date ]</a>
+              <a href="thread.html#135">[ thread ]</a>
+              <a href="subject.html#135">[ subject ]</a>
+              <a href="author.html#135">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Dieser Bugreport wurde generiert von: <A HREF="http://midgard.berlios.de/pages/bugform.html">http://midgard.berlios.de/pages/bugform.html</A>
+Antworten bitte _nur_ an <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">Taladan at freenet.de</A> (und ggf. an die Liste) 
+
+
+ABSENDER: Jorg, <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">Taladan at freenet.de</A> 
+BETRIEBSSYSTEM: Windows XP - Home  x86_64 (intel/amd 64bit) 
+MAGUS-Version: 0.9.9.14
+Quelle: CVS 
+Version: 
+Der Fehler bezieht sich auf die Regelimplementierung.
+Der Fehler ist reproduzierbar.
+
+
+Fehlerbeschreibung:
+
+Resistenzen von Halblingen, die Zaubertalent 98, Intelligenz 100 und Gewandheit 87 haben werden falsch berechnet:
+Der Bonus laut Magus ist +8 / +8 / +8 und nicht wie im Regelwerk +9 / +8 / +6.
+
+Ich kann keine Zauberbeschreibung ausdrucken, auch wenn ich den entsprecheneden Haken setze und \&quot;Alles Ausdrucken\&quot; w&#195;&#164;hle. 
+
+Ansonsten VIELEN DANK f&#195;&#188;r das tolle Programm!
+
+
+
+Vielleicht hilft ja auch noch die MAGUS-Datei:
+
+
+&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;
+
+&lt;MAGUS-data&gt;
+ &lt;Midgard-Abenteurer Version=\&quot;10\&quot;&gt;
+  &lt;Figur Grad=\&quot;1\&quot; Name=\&quot;Hanubi Frohnatur\&quot; Spieler=\&quot;Jorg\&quot; Zeitpunkt=\&quot;Erschaffung\&quot;/&gt;
+  &lt;Typ Abk&#195;&#188;rzung=\&quot;PW\&quot; Geschlecht=\&quot;m\&quot; Hand=\&quot;Rechtsh&#195;&#164;nder\&quot; Muttersprache=\&quot;Halftan\&quot; Spezialisierung=\&quot;Sto&amp;#x9F;speer&amp;#x9F;speer\&quot; Spezies=\&quot;Halbling\&quot; Stadt_Land=\&quot;Land\&quot; &#195;&#156;berleben=\&quot;&amp;#x9C;berleben im Wald\&quot;/&gt;
+  &lt;Basiseigenschaften Gs=\&quot;64\&quot; Gw=\&quot;87\&quot; In=\&quot;100\&quot; Ko=\&quot;82\&quot; St=\&quot;62\&quot; Zt=\&quot;98\&quot;/&gt;
+  &lt;abgeleiteteEigenschaften Au=\&quot;93\&quot; B=\&quot;14\&quot; Sb=\&quot;20\&quot; Wk=\&quot;31\&quot; pA=\&quot;84\&quot;/&gt;
+  &lt;Erfolgswerte Abwehr=\&quot;11\&quot; ZauberResistenz=\&quot;10\&quot; Zaubern=\&quot;10\&quot;/&gt;
+  &lt;Gesundheit AP=\&quot;8\&quot; LP=\&quot;14\&quot;/&gt;
+  &lt;Beschreibung Alter=\&quot;25\&quot; Gestalt=\&quot;normal\&quot; Gewicht=\&quot;39\&quot; Glaube=\&quot;Leomie und Peleandrin\&quot; Gr&#195;&#182;&#195;&#159;e=\&quot;112\&quot; Herkunft=\&quot;Halfdal\&quot; Merkmale=\&quot;rote Wangen, dicke Knollennase, fr&#195;&#182;hlich, kocht gerne und gut\&quot; Stand=\&quot;Mittelschicht\&quot;/&gt;
+  &lt;Verm&#195;&#182;gen/&gt;
+  &lt;Steigern&gt;
+   &lt;Praxispunkte/&gt;
+  &lt;/Steigern&gt;
+  &lt;Text Gr&#195;&#182;&#195;&#159;e=\&quot;8\&quot;/&gt;
+  &lt;Ausr&#195;&#188;stung&gt;
+   &lt;R&#195;&#188;stung&gt;OR&lt;/R&#195;&#188;stung&gt;
+   &lt;R&#195;&#188;stung2&gt;OR&lt;/R&#195;&#188;stung2&gt;
+  &lt;/Ausr&#195;&#188;stung&gt;
+  &lt;Fertigkeiten&gt;
+   &lt;Sinn Bezeichnung=\&quot;Sehen\&quot; Wert=\&quot;8\&quot;/&gt;
+   &lt;Sinn Bezeichnung=\&quot;H&#195;&#182;ren\&quot; Wert=\&quot;8\&quot;/&gt;
+   &lt;Sinn Bezeichnung=\&quot;Riechen\&quot; Wert=\&quot;8\&quot;/&gt;
+   &lt;Sinn Bezeichnung=\&quot;Schmecken\&quot; Wert=\&quot;10\&quot;/&gt;
+   &lt;Sinn Bezeichnung=\&quot;Tasten\&quot; Wert=\&quot;8\&quot;/&gt;
+   &lt;Sinn Bezeichnung=\&quot;Sechster Sinn\&quot; Wert=\&quot;3\&quot;/&gt;
+   &lt;Beruf Bezeichnung=\&quot;Verwalter\&quot;/&gt;
+   &lt;ang-Fertigkeit Bezeichnung=\&quot;Gute Reflexe\&quot; Wert=\&quot;9\&quot;/&gt;
+   &lt;ang-Fertigkeit Bezeichnung=\&quot;Richtungssinn\&quot; Wert=\&quot;12\&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=\&quot;Erste Hilfe\&quot; Wert=\&quot;8\&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=\&quot;Heilkunde\&quot; Wert=\&quot;7\&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=\&quot;Himmelskunde\&quot; Wert=\&quot;6\&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=\&quot;Landeskunde\&quot; Wert=\&quot;11\&quot; Zusatz=\&quot;Halfdal\&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=\&quot;Lesen von Zauberschrift\&quot; Wert=\&quot;14\&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=\&quot;Musizieren\&quot; Wert=\&quot;8\&quot; Zusatz=\&quot;Panfl&#195;&#182;te\&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=\&quot;Reiten\&quot; Wert=\&quot;11\&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=\&quot;Schleichen\&quot; Wert=\&quot;11\&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=\&quot;Singen\&quot; Wert=\&quot;13\&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=\&quot;Tanzen\&quot; Wert=\&quot;11\&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=\&quot;Tarnen\&quot; Wert=\&quot;11\&quot;/&gt;
+   &lt;Waffe Bezeichnung=\&quot;Sto&amp;#x9F;speer\&quot; Wert=\&quot;4\&quot;/&gt;
+   &lt;Waffe Bezeichnung=\&quot;Magierstab\&quot; Wert=\&quot;4\&quot;/&gt;
+   &lt;Zauber Bezeichnung=\&quot;Austreibung des B&#195;&#182;sen\&quot;/&gt;
+   &lt;Zauber Bezeichnung=\&quot;Bannen von Finsterwerk\&quot;/&gt;
+   &lt;Zauber Bezeichnung=\&quot;Handauflegen\&quot;/&gt;
+   &lt;Zauber Bezeichnung=\&quot;Heilen von Krankheit\&quot;/&gt;
+   &lt;Zauber Bezeichnung=\&quot;Segnen\&quot;/&gt;
+   &lt;Grundkenntnis Bezeichnung=\&quot;Spie&amp;#x9F;waffe\&quot;/&gt;
+   &lt;Grundkenntnis Bezeichnung=\&quot;Zauberst&#195;&#164;be\&quot;/&gt;
+   &lt;Sprache Bezeichnung=\&quot;Altoqua\&quot; Wert=\&quot;14\&quot;/&gt;
+   &lt;Sprache Bezeichnung=\&quot;Comentang\&quot; Wert=\&quot;11\&quot;/&gt;
+   &lt;Sprache Bezeichnung=\&quot;Eldalyn\&quot; Wert=\&quot;11\&quot;/&gt;
+   &lt;Sprache Bezeichnung=\&quot;Halftan\&quot; Wert=\&quot;20\&quot;/&gt;
+   &lt;Sprache Bezeichnung=\&quot;Scharidisch\&quot; Wert=\&quot;12\&quot;/&gt;
+   &lt;Urschrift Bezeichnung=\&quot;Halftan\&quot; Buchstaben=\&quot;Valianisches Alphabet\&quot; Wert=\&quot;15\&quot;/&gt;
+  &lt;/Fertigkeiten&gt;
+  &lt;Optionen&gt;
+   &lt;Region Name=\&quot;Das Fantasy Rollenspiel\&quot; Region=\&quot;\&quot;/&gt;
+   &lt;Region Name=\&quot;Arkanum\&quot; Region=\&quot;Arkanum\&quot;/&gt;
+   &lt;Region Name=\&quot;Kompendium\&quot; Region=\&quot;TuT\&quot;/&gt;
+   &lt;Region Name=\&quot;Alba\&quot; Region=\&quot;A\&quot;/&gt;
+   &lt;Region Name=\&quot;Eschar\&quot; Region=\&quot;E\&quot;/&gt;
+   &lt;Region Name=\&quot;Nahuatlan\&quot; Region=\&quot;N\&quot;/&gt;
+   &lt;Region Name=\&quot;KanThaiPan\&quot; Region=\&quot;K\&quot;/&gt;
+   &lt;Region Name=\&quot;Rawindra\&quot; Region=\&quot;R\&quot;/&gt;
+   &lt;Region Name=\&quot;Waeland\&quot; Region=\&quot;W\&quot;/&gt;
+   &lt;Region Name=\&quot;Hexenzauber &amp; Druidenkraft\&quot; Region=\&quot;H&amp;D\&quot;/&gt;
+   &lt;Region Name=\&quot;H&amp;D (Finstere Magie)\&quot; Region=\&quot;H&amp;Df\&quot;/&gt;
+   &lt;Region Name=\&quot;Abenteuer\&quot; Region=\&quot;X\&quot;/&gt;
+   &lt;Region Name=\&quot;Gildenbrief\&quot; Region=\&quot;G\&quot;/&gt;
+   &lt;CheckOptions Name=\&quot;Originalregeln\&quot; Wert=\&quot;true\&quot;/&gt;
+   &lt;CheckOptions Name=\&quot;NSC zulassen\&quot; Wert=\&quot;false\&quot;/&gt;
+   &lt;CheckOptions Name=\&quot;Zauberbeschreibung ausdrucken\&quot; Wert=\&quot;true\&quot;/&gt;
+   &lt;Hausregeln Name=\&quot;1 GS entspricht 1 GFP\&quot; Wert=\&quot;false\&quot;/&gt;
+   &lt;Hausregeln Name=\&quot;Grundwerte &#195;&#188;ber 100 zulassen\&quot; Wert=\&quot;false\&quot;/&gt;
+  &lt;/Optionen&gt;
+ &lt;/Midgard-Abenteurer&gt;
+&lt;/MAGUS-data&gt;
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000134.html">[MAGUS] magus
+</A></li>
+	<LI>Next message: <A HREF="000137.html">[MAGUS] MAGUS - Bugreport - 14 Aug 06
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#135">[ date ]</a>
+              <a href="thread.html#135">[ thread ]</a>
+              <a href="subject.html#135">[ subject ]</a>
+              <a href="author.html#135">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

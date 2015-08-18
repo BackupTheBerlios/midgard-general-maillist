@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Bug bei Magierstab (-stecken?)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2006-August/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Bug%20bei%20Magierstab%20%28-stecken%3F%29&In-Reply-To=%3C44F3F00B.6090701%40uni-muenster.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000157.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Bug bei Magierstab (-stecken?)</H1>
+    <B>Malte Thoma</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Bug%20bei%20Magierstab%20%28-stecken%3F%29&In-Reply-To=%3C44F3F00B.6090701%40uni-muenster.de%3E"
+       TITLE="[MAGUS] Bug bei Magierstab (-stecken?)">thoma at uni-muenster.de
+       </A><BR>
+    <I>Tue Aug 29 09:43:07 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000157.html">[MAGUS] Bug bei Magierstab (-stecken?)
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#158">[ date ]</a>
+              <a href="thread.html#158">[ thread ]</a>
+              <a href="subject.html#158">[ subject ]</a>
+              <a href="author.html#158">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Hallo Luks,
+
+danke, das errata wurde in der Tat nicht &#252;bernommen, ist aber gefixed.
+Solltest Du weitere Bugs finden, melde Dich!
+
+Gru&#223;,
+Malte
+
+
+
+ALT:
+SELECT name,schwierigkeit from waffen where name='Magierstab' or
+name='Magierstecken' or name ='Ochsenzunge' or name ='Schlachtbeil' or
+name='Kompositbogen' order by name;
+
+     name      | schwierigkeit
+- ---------------+---------------
+ Kompositbogen |             5
+ Magierstab    |             7
+ Magierstecken |             7
+ Ochsenzunge   |             2
+ Schlachtbeil  |             4
+(5 rows)
+
+
+NEU:
+ SELECT name,schwierigkeit from waffen where name='Magierstab' or
+name='Magierstecken' or name ='Ochsenzunge' or name ='Schlachtbeil' or
+name='Kompositbogen' order by name;
+     name      | schwierigkeit
+- ---------------+---------------
+ Kompositbogen |             6
+ Magierstab    |             3
+ Magierstecken |             4
+ Ochsenzunge   |             3
+ Schlachtbeil  |             3
+
+
+mit:
+
+std::string Waffe::Schwierigkeit_str() const
+{
+  switch(Schwierigkeit()) {
+    case 0: return &quot;Verteidigung&quot;;
+    case 1: return &quot;extrem leicht&quot;;
+    case 2: return &quot;sehr leicht&quot;;
+    case 3: return &quot;leicht&quot;;
+    case 4: return &quot;normal&quot;;
+    case 5: return &quot;schwer&quot;;
+    case 6: return &quot;sehr schwer&quot;;
+    case 7: return &quot;extrem schwer&quot;;
+   }
+  return itos(Schwierigkeit());
+}
+
+
+
+Lukas Schratz wrote:
+&gt;<i> Hi,
+</I>&gt;<i> wie ich gerade festgestellt habe, wurde entweder ein Erratum des DFR nicht 
+</I>&gt;<i> &#252;bernommen oder es wurde ein Detail nicht beachtet.
+</I>&gt;<i> 
+</I>&gt;<i> Will man bei einem Magier den Magierstab z.B. von 6 auf 7 steigern, 
+</I>&gt;<i> rechnet MAGUS mit 60 n&#246;tigen GFP. Tats&#228;chlich sind es aber nur 30. Laut 
+</I>&gt;<i> Errata des DFR:
+</I>&gt;<i> (<A HREF="http://www.midgard-online.de/cgi-bin/show?id=support/errata/01_errata_DFR.html">http://www.midgard-online.de/cgi-bin/show?id=support/errata/01_errata_DFR.html</A>)
+</I>&gt;<i> ist Magierstab &quot;leicht&quot; (nicht extrem schwer) und Magierstecken &quot;normal&quot; 
+</I>&gt;<i> (nicht extrem schwer). Zauberer lernen Zauberst&#228;be als &quot;Standard&quot; und 
+</I>&gt;<i> dort greift die sonst &#252;bliche Verdopplung wegen Ausnahmefertigkeit also 
+</I>&gt;<i> nicht.
+</I>&gt;<i> 
+</I>&gt;<i> lG
+</I>&gt;<i> Lukas, verwendet MAGUS 0.9.9.15, Suse-RPMs
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Midgard-general mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">Midgard-general at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">https://lists.berlios.de/mailman/listinfo/midgard-general</A>
+</I>&gt;<i> 
+</I>
+
+- --
+***********************************************************************
+***  Dr. Malte Thoma             ***  email: <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">thoma at bas.ac.uk</A>        ***
+***                              ***         <A HREF="https://lists.berlios.de/mailman/listinfo/midgard-general">thoma at uni-muenster.de</A>  ***
+***  British Antarctic Survey    ***                                ***
+***  High Cross, Madingley Road  ***  Tel.:  0044 (0)1223 221346    ***
+***  Cambridge, CB3 0ET          ***  Fax.:  0044 (0)1223 221226    ***
+***  United Kingdom              ***                                ***
+***********************************************************************
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFE8/ALN0SAw637+84RAlGkAJ4si7/uRM6IIFMkzqUm4MiQiYcxlQCbBrUf
+2yZpNVW1BTt32R2VBuUw8wI=
+=8MMs
+-----END PGP SIGNATURE-----
+
+--  
+This message (and any attachments) is for the recipient only.  NERC is subject
+to the Freedom of Information Act 2000 and the contents of this email and any
+reply you make may be disclosed by NERC unless it is exempt from release under
+the Act.  Any material supplied to NERC may be stored in an electronic
+records management system.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000157.html">[MAGUS] Bug bei Magierstab (-stecken?)
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#158">[ date ]</a>
+              <a href="thread.html#158">[ thread ]</a>
+              <a href="subject.html#158">[ subject ]</a>
+              <a href="author.html#158">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

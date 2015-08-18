@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Public monotone server for magus available
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2007-December/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Public%20monotone%20server%20for%20magus%20available&In-Reply-To=%3C1198054907l.4368l.1l%40blueeye%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000226.html">
+   <LINK REL="Next"  HREF="000228.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Public monotone server for magus available</H1>
+    <B>Alessandro Filippetti</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Public%20monotone%20server%20for%20magus%20available&In-Reply-To=%3C1198054907l.4368l.1l%40blueeye%3E"
+       TITLE="[MAGUS] Public monotone server for magus available">sandro at filippetti.de
+       </A><BR>
+    <I>Wed Dec 19 10:01:43 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000226.html">[MAGUS] Public monotone server for magus available
+</A></li>
+        <LI>Next message: <A HREF="000228.html">[MAGUS] Public monotone server for magus available
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#227">[ date ]</a>
+              <a href="thread.html#227">[ thread ]</a>
+              <a href="subject.html#227">[ subject ]</a>
+              <a href="author.html#227">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Hi!
+
+Am 18.12.2007 23:19:33 schrieb Christof Petig:
+&gt;<i> 
+</I>&gt;<i> Hallo,
+</I>&gt;<i> 
+</I>&gt;<i> Ich habe gerade einen &#246;ffentlichen Server eingerichtet, auf dem die
+</I>&gt;<i> aktuelle Entwicklerversion von Magus tagesaktuell zu bekommen ist.
+</I>&gt;<i> 
+</I>&gt;<i> Monotone gibt es unter
+</I>&gt;<i> <A HREF="http://monotone.ca/downloads/0.38/mtn-0.38-linux-x86.bz2">http://monotone.ca/downloads/0.38/mtn-0.38-linux-x86.bz2</A>
+</I>
+Unter <A HREF="http://monotone.ca/">http://monotone.ca/</A> gibt es monotone auch f&#252;r Windows (mitCygwin)  
+und OSX
+
+
+&gt;<i> $ mtn -d magus.db db init
+</I>&gt;<i> $ mtn -d magus.db pull petig-baender.dyndns.org \*
+</I>
+Das erstellen(?) der Datenbank dauert etwas
+
+[Meldungen gesnippt]
+
+&gt;<i> $ mtn -d magus.db -b manuproc.berlios.de/ManuProC_Base co  
+</I>&gt;<i> ManuProC_Base
+</I>&gt;<i> $ mtn -d magus.db -b manuproc.berlios.de/GtkmmAddons co GtkmmAddons
+</I>&gt;<i> $ mtn -d magus.db -b manuproc.berlios.de/ManuProC_Widgets co  
+</I>&gt;<i> ManuProC_Widgets
+</I>&gt;<i> $ mtn -d magus.db -b midgard.berlios.de/midgard co midgard
+</I>
+Wie updatet man ein Verzeichnis?
+
+Und hier auch der erste Compiler-Abbruch (in midgard/):
+
+  g++ -DHAVE_CONFIG_H -I. -I. -I..  
+- -I/work/Software/install/magus_mon/ManuProC_Base/src  
+- -I/opt/gnome/include/sigc++-2.0 -I/opt/gnome/lib64/sigc++-2.0/include  
+- -I. -I/usr/include/pgsql -I.. -I/usr/include/cairo  
+- -I/usr/include/freetype2 -I/usr/X11R6/include -I/usr/include/libpng12  
+- -I/opt/gnome/include/gtkmm-2.4 -I/opt/gnome/lib64/gtkmm-2.4/include  
+- -I/opt/gnome/include/glibmm-2.4 -I/opt/gnome/lib64/glibmm-2.4/include  
+- -I/opt/gnome/include/gdkmm-2.4 -I/opt/gnome/lib64/gdkmm-2.4/include  
+- -I/opt/gnome/include/pangomm-1.4 -I/opt/gnome/include/atkmm-1.6  
+- -I/opt/gnome/include/gtk-2.0 -I/opt/gnome/include/sigc++-2.0  
+- -I/opt/gnome/lib64/sigc++-2.0/include -I/opt/gnome/include/glib-2.0  
+- -I/opt/gnome/lib64/glib-2.0/include -I/opt/gnome/lib64/gtk-2.0/include  
+- -I/opt/gnome/include/pango-1.0 -I/opt/gnome/include/atk-1.0  
+- -I/work/Software/install/magus_mon/GtkmmAddons/src  
+- -Dlibmagus_COMPILATION -g -O2 -MT Abenteurer.lo -MD -MP -MF  
+.deps/Abenteurer.Tpo -c Abenteurer.cc  -fPIC -DPIC -o .libs/Abenteurer.o
+Abenteurer.cc:1030:4: warning: #warning besser vorher nachsehen statt  
+hinterher l&#246;schen
+Abenteurer.cc: In member function 'H_MBEm Abenteurer::Erlernen(const  
+H_LSE&amp;)':
+Abenteurer.cc:900: warning: 'operator-&gt;' is deprecated (declared at  
+MidgardBasicElement.hh:403)
+Abenteurer.cc:900: error: 'A' was not declared in this scope
+Abenteurer.cc:902: warning: 'operator-&gt;' is deprecated (declared at  
+MidgardBasicElement.hh:403)
+Abenteurer.cc:903: error: conversion from 'H_MBEm  
+(*)(Handle&lt;MidgardBasicElement_mutable&gt; (*)())' to non-scalar type  
+'H_MBEm' requested
+Abenteurer.cc:907: warning: 'operator-&gt;' is deprecated (declared at  
+MidgardBasicElement.hh:403)
+Abenteurer.cc:910: error: no matching function for call to  
+'Lernpunkte::setWaffen()'
+class_lernpunkte.hh:46: note: candidates are: void  
+Lernpunkte::setWaffen(int)
+Abenteurer.cc:911: warning: 'operator-&gt;' is deprecated (declared at  
+MidgardBasicElement.hh:403)
+Abenteurer.cc:914: error: 'fachwissen' is not a member of  
+'MidgardBasicElement_mutable::wie_erlernt'
+Abenteurer.cc:915: error: 'vabenteurer' was not declared in this scope
+Abenteurer.cc:921: warning: 'operator-&gt;' is deprecated (declared at  
+MidgardBasicElement.hh:403)
+Abenteurer.cc:924: warning: 'operator-&gt;' is deprecated (declared at  
+MidgardBasicElement.hh:403)
+Abenteurer.cc:928: error: conversion from 'H_MBEm  
+(*)(Handle&lt;MidgardBasicElement_mutable&gt; (*)())' to non-scalar type  
+'H_MBEm' requested
+Abenteurer.cc:1037: error: 'fachwissen' is not a member of  
+'MidgardBasicElement_mutable::wie_erlernt'
+Abenteurer.cc:1038: error: 'vabenteurer' was not declared in this scope
+Abenteurer.cc:1040: error: 'vabenteurer' was not declared in this scope
+Abenteurer.cc:1042: error: 'vabenteurer' was not declared in this scope
+Abenteurer.cc:1043: warning: 'operator-&gt;' is deprecated (declared at  
+MidgardBasicElement.hh:403)
+Abenteurer.cc:1044: error: 'vabenteurer' was not declared in this scope
+Abenteurer.cc:1045: warning: 'operator-&gt;' is deprecated (declared at  
+MidgardBasicElement.hh:403)
+Abenteurer.cc:1046: error: 'vabenteurer' was not declared in this scope
+gmake[4]: *** [Abenteurer.lo] Fehler 1
+
+
+bis dann,
+	Sandro
+
+- -- 
+gpg-key id: 0x5CC721CD available at: <A HREF="http://pgp.mit.edu/">http://pgp.mit.edu/</A>
+&quot;1984&quot; is NOT a HOWTO!
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD4DBQFHaN370Y6KeVzHIc0RAtgsAJi4CKo+3MfF2QCGB2abiyEUXYpuAKC2n/1o
+uT6o7KKJbZkfC8rNw23Jxw==
+=FXZb
+-----END PGP SIGNATURE-----
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000226.html">[MAGUS] Public monotone server for magus available
+</A></li>
+	<LI>Next message: <A HREF="000228.html">[MAGUS] Public monotone server for magus available
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#227">[ date ]</a>
+              <a href="thread.html#227">[ thread ]</a>
+              <a href="subject.html#227">[ subject ]</a>
+              <a href="author.html#227">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

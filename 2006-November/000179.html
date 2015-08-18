@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Verteidigung
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2006-November/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Verteidigung&In-Reply-To=%3COF9E4F02FA.DDA0D4AC-ONC125721C.002DEB86-C125721C.002DEB96%40pta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000178.html">
+   <LINK REL="Next"  HREF="000180.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Verteidigung</H1>
+    <B>andreas.hermann at pta.de</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Verteidigung&In-Reply-To=%3COF9E4F02FA.DDA0D4AC-ONC125721C.002DEB86-C125721C.002DEB96%40pta.de%3E"
+       TITLE="[MAGUS] Verteidigung">andreas.hermann at pta.de
+       </A><BR>
+    <I>Sat Nov  4 09:21:34 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000178.html">[MAGUS] XML-Daten, Version 0.8 und Beschw&#246;rer
+</A></li>
+        <LI>Next message: <A HREF="000180.html">[MAGUS] MAGUS - Bugreport - 19 Nov 06
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#179">[ date ]</a>
+              <a href="thread.html#179">[ thread ]</a>
+              <a href="subject.html#179">[ subject ]</a>
+              <a href="author.html#179">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+
+
+Hallo,
+
+habe hier in Version 8.24 und 9.6 einen sonderbaren Effekt.
+
+Bei einem neu erschaffenen Krieger mit
+Abwehrbonus +2,
+Gro&#223;er Schild +1,
+Kampf in Vollr&#252;stung,
+Kettenhemd
+wird mir unter Abwehr +13 - 1 und
+unter Abwehr mit Verteidigungswaffe -1 ausgegeben.
+
+letzteres ist sicher falsch.
+(Die -1 in Anbetracht der Kettenr&#252;stung allgemein wohl richtig.)
+
+Ein anderer Charakter mit
+Abwehrbonus 0,
+Kleiner Schild +1,
+Kein Kampf in Vollr&#252;stung !,
+Kettenhemd
+bekommt hingegen +11 und +12 angezeigt.
+(Kettenr&#252;stung wird also hier nicht mit eingerechnet)
+
+
+
+
+
+Obiger Krieger
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+
+&lt;MAGUS-data&gt;
+ &lt;Midgard-Abenteurer Version=&quot;10&quot;&gt;
+  &lt;Figur Name=&quot;Femur de Culhain&quot; Spieler=&quot;Andreas Hermann&quot;
+Zeitpunkt=&quot;Erschaffung&quot; Grad=&quot;1&quot;/&gt;
+  &lt;Typ Spezies=&quot;Mensch&quot; Geschlecht=&quot;m&quot; Abk&#252;rzung=&quot;Kr&quot; &#220;berleben=&quot;&#220;berleben
+Heimat&quot; Muttersprache=&quot;Albisch&quot; Stadt_Land=&quot;Stadt&quot; Hand=&quot;Linksh&#228;nder&quot;/&gt;
+  &lt;Basiseigenschaften St=&quot;89&quot; Gw=&quot;98&quot; Gs=&quot;99&quot; Ko=&quot;78&quot; In=&quot;94&quot; Zt=&quot;61&quot;/&gt;
+  &lt;abgeleiteteEigenschaften Au=&quot;71&quot; pA=&quot;56&quot; Wk=&quot;30&quot; Sb=&quot;88&quot; B=&quot;25&quot;/&gt;
+  &lt;Erfolgswerte Abwehr=&quot;11&quot; Zaubern=&quot;2&quot; ZauberResistenz=&quot;10&quot;/&gt;
+  &lt;Gesundheit LP=&quot;17&quot; AP=&quot;13&quot;/&gt;
+  &lt;Beschreibung Alter=&quot;24&quot; Gestalt=&quot;normal&quot; Gewicht=&quot;82&quot; Gr&#246;&#223;e=&quot;180&quot;
+Stand=&quot;Adel&quot; Herkunft=&quot;Alba&quot;/&gt;
+  &lt;Verm&#246;gen GS=&quot;22&quot;/&gt;
+  &lt;Steigern&gt;
+   &lt;Praxispunkte/&gt;
+  &lt;/Steigern&gt;
+  &lt;Text Gr&#246;&#223;e=&quot;8&quot;/&gt;
+  &lt;Ausr&#252;stung&gt;
+   &lt;R&#252;stung&gt;KR&lt;/R&#252;stung&gt;
+   &lt;R&#252;stung2&gt;OR&lt;/R&#252;stung2&gt;
+   &lt;Waffe Erfolgswert=&quot;0&quot; Bezeichnung=&quot;Anderthalbh&#228;nder&quot;/&gt;
+   &lt;Waffe Erfolgswert=&quot;0&quot; Bezeichnung=&quot;Bogen&quot;/&gt;
+   &lt;Waffe Erfolgswert=&quot;0&quot; Bezeichnung=&quot;Lanze&quot;/&gt;
+   &lt;Waffe Erfolgswert=&quot;0&quot; Bezeichnung=&quot;kleiner Schild&quot;/&gt;
+   &lt;Waffe Erfolgswert=&quot;0&quot; Bezeichnung=&quot;Krumms&#228;bel&quot;/&gt;
+   &lt;Gegenstand Anzahl=&quot;1&quot; Bezeichnung=&quot;Krumms&#228;bel&quot; Beschreibung=&quot;&quot;
+Region=&quot;&quot; Gewicht=&quot;0.000000&quot; R&#252;stungOhneGewicht=&quot;false&quot; Besonderheit=&quot;&quot;
+sichtbar=&quot;true&quot;/&gt;
+   &lt;Gegenstand Anzahl=&quot;1&quot; Bezeichnung=&quot;kleiner Schild&quot; Beschreibung=&quot;&quot;
+Region=&quot;&quot; Gewicht=&quot;0.000000&quot; R&#252;stungOhneGewicht=&quot;false&quot; Besonderheit=&quot;&quot;
+sichtbar=&quot;true&quot;/&gt;
+   &lt;Gegenstand Anzahl=&quot;1&quot; Bezeichnung=&quot;Lanze&quot; Beschreibung=&quot;&quot; Region=&quot;&quot;
+Gewicht=&quot;0.000000&quot; R&#252;stungOhneGewicht=&quot;false&quot; Besonderheit=&quot;&quot;
+sichtbar=&quot;true&quot;/&gt;
+   &lt;Gegenstand Anzahl=&quot;1&quot; Bezeichnung=&quot;Anderthalbh&#228;nder&quot; Beschreibung=&quot;&quot;
+Region=&quot;&quot; Gewicht=&quot;0.000000&quot; R&#252;stungOhneGewicht=&quot;false&quot; Besonderheit=&quot;&quot;
+sichtbar=&quot;true&quot;/&gt;
+   &lt;Gegenstand Anzahl=&quot;1&quot; Bezeichnung=&quot;Reitpferd&quot; Beschreibung=&quot;&quot; Region=&quot;&quot;
+Gewicht=&quot;0.000000&quot; R&#252;stungOhneGewicht=&quot;false&quot; Besonderheit=&quot;&quot;
+sichtbar=&quot;true&quot;/&gt;
+  &lt;/Ausr&#252;stung&gt;
+  &lt;Fertigkeiten&gt;
+   &lt;Sinn Bezeichnung=&quot;Sehen&quot; Wert=&quot;8&quot;/&gt;
+   &lt;Sinn Bezeichnung=&quot;H&#246;ren&quot; Wert=&quot;8&quot;/&gt;
+   &lt;Sinn Bezeichnung=&quot;Riechen&quot; Wert=&quot;10&quot;/&gt;
+   &lt;Sinn Bezeichnung=&quot;Schmecken&quot; Wert=&quot;8&quot;/&gt;
+   &lt;Sinn Bezeichnung=&quot;Tasten&quot; Wert=&quot;8&quot;/&gt;
+   &lt;Sinn Bezeichnung=&quot;Sechster Sinn&quot; Wert=&quot;2&quot;/&gt;
+   &lt;Beruf Bezeichnung=&quot;Verwalter&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=&quot;Beidh&#228;ndiger Kampf&quot; Wert=&quot;5&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=&quot;Bogenkampf zu Pferd&quot; Wert=&quot;17&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=&quot;Kampf in Schlachtreihe&quot; Wert=&quot;5&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=&quot;Kampf in Vollr&#252;stung&quot; Wert=&quot;16&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=&quot;Kampf zu Pferd&quot; Wert=&quot;17&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=&quot;Menschenkenntnis&quot; Wert=&quot;5&quot;/&gt;
+   &lt;Fertigkeit Bezeichnung=&quot;Reiten&quot; Wert=&quot;17&quot;/&gt;
+   &lt;Waffe Bezeichnung=&quot;Bogen&quot; Wert=&quot;5&quot;/&gt;
+   &lt;Waffe Bezeichnung=&quot;Anderthalbh&#228;nder&quot; Wert=&quot;5&quot;/&gt;
+   &lt;Waffe Bezeichnung=&quot;gro&#223;er Schild&quot; Wert=&quot;1&quot;/&gt;
+   &lt;Waffe Bezeichnung=&quot;Lanze&quot; Wert=&quot;5&quot;/&gt;
+   &lt;Waffe Bezeichnung=&quot;Krumms&#228;bel&quot; Wert=&quot;7&quot;/&gt;
+   &lt;Waffe Bezeichnung=&quot;Handaxt&quot; Wert=&quot;5&quot;/&gt;
+   &lt;Grundkenntnis Bezeichnung=&quot;B&#246;gen&quot;/&gt;
+   &lt;Grundkenntnis Bezeichnung=&quot;Einhandschlagwaffe&quot;/&gt;
+   &lt;Grundkenntnis Bezeichnung=&quot;Einhandschwert&quot;/&gt;
+   &lt;Grundkenntnis Bezeichnung=&quot;Schild&quot;/&gt;
+   &lt;Grundkenntnis Bezeichnung=&quot;Spie&#223;waffe&quot;/&gt;
+   &lt;Grundkenntnis Bezeichnung=&quot;Zweihandschwert&quot;/&gt;
+   &lt;Sprache Bezeichnung=&quot;Albisch&quot; Wert=&quot;19&quot;/&gt;
+   &lt;Sprache Bezeichnung=&quot;Aranisch&quot; Wert=&quot;12&quot;/&gt;
+   &lt;Sprache Bezeichnung=&quot;Dvarskar&quot; Wert=&quot;10&quot;/&gt;
+   &lt;Urschrift Bezeichnung=&quot;Albisch&quot; Wert=&quot;12&quot;/&gt;
+  &lt;/Fertigkeiten&gt;
+  &lt;Optionen&gt;
+   &lt;CheckOptions Name=&quot;Originalregeln&quot; Wert=&quot;true&quot;/&gt;
+   &lt;CheckOptions Name=&quot;NSC zulassen&quot; Wert=&quot;false&quot;/&gt;
+   &lt;Hausregeln Name=&quot;1 GS entspricht 1 GFP&quot; Wert=&quot;false&quot;/&gt;
+   &lt;Hausregeln Name=&quot;Grundwerte &#252;ber 100 zulassen&quot; Wert=&quot;false&quot;/&gt;
+   &lt;Hausregeln Name=&quot;Ausdauerpunkte f&#252;r Nicht-Menschen nach GB51&quot;
+Wert=&quot;false&quot;/&gt;
+  &lt;/Optionen&gt;
+ &lt;/Midgard-Abenteurer&gt;
+&lt;/MAGUS-data&gt;
+
+
+**********************************************************************
+<A HREF="http://www.pta.de">http://www.pta.de</A>
+Mit 1397 Erfahrungsberichten aus 37 Jahren erfolgreicher Projektarbeit!
+**********************************************************************
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000178.html">[MAGUS] XML-Daten, Version 0.8 und Beschw&#246;rer
+</A></li>
+	<LI>Next message: <A HREF="000180.html">[MAGUS] MAGUS - Bugreport - 19 Nov 06
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#179">[ date ]</a>
+              <a href="thread.html#179">[ thread ]</a>
+              <a href="subject.html#179">[ subject ]</a>
+              <a href="author.html#179">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

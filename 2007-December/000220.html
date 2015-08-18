@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Magus build broken
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2007-December/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Magus%20build%20broken&In-Reply-To=%3C1197023325l.4369l.0l%40blueeye%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000219.html">
+   <LINK REL="Next"  HREF="000221.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Magus build broken</H1>
+    <B>Alessandro Filippetti</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Magus%20build%20broken&In-Reply-To=%3C1197023325l.4369l.0l%40blueeye%3E"
+       TITLE="[MAGUS] Magus build broken">sandro at filippetti.de
+       </A><BR>
+    <I>Fri Dec  7 11:28:40 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000219.html">[MAGUS] Magus build broken
+</A></li>
+        <LI>Next message: <A HREF="000221.html">[MAGUS] Spitzbube lernt Zaubern - Wie?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#220">[ date ]</a>
+              <a href="thread.html#220">[ thread ]</a>
+              <a href="subject.html#220">[ subject ]</a>
+              <a href="author.html#220">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Am 06.12.2007 14:21:52 schrieb Malte Thoma:
+&gt;<i> autogen.sh in midgard.berlios.de/midgard bricht mit
+</I>&gt;<i> 
+</I>&gt;<i> checking for common++ library... configure: error: not found
+</I>&gt;<i> 
+</I>&gt;<i> ab. Und  mit   ./configure --help
+</I>&gt;<i> habe ich die richtige Option f&#252;r dei entsprecehnde Pfadangabe
+</I>&gt;<i> (../manuproc.berlios.de/ManuProC_Base) nicht gefunden :-(
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> w&#228;re vielleicht nicht schlecht, wenn in ../manuproc.berlios.de/...
+</I>&gt;<i> automatisch gesucht w&#252;rde.
+</I>&gt;<i> 
+</I>&gt;<i> Gibt es einen schnellen Fix f&#252;r ./configure 
+</I>&gt;<i> --manuproc-path=../manuproc.berlios.de
+</I>&gt;<i> ???
+</I>
+Nachdem Christof mich auf das mtn binary aufmerksam gemacht hat
+( <A HREF="http://monotone.ca/downloads/0.37/mtn-0.37-linux-x86.bz2">http://monotone.ca/downloads/0.37/mtn-0.37-linux-x86.bz2</A> )
+hab ich die db entpacken k&#246;nnen 
+
+|<i> mtn -d magus_small.db -b manuproc.berlios.de/ManuProC_Base co
+</I>|<i> ManuProC_Base
+</I>|<i> mtn -d magus_small.db -b manuproc.berlios.de/GtkmmAddons co 
+</I>|<i> GtkmmAddons
+</I>|<i> mtn -d magus_small.db -b manuproc.berlios.de/ManuProC_Widgets co
+</I>|<i> ManuProC_Widgets
+</I>|<i> mtn -d magus_small.db -b midgard.berlios.de/midgard co midgard 
+</I>
+(Christofs Tip)
+
+verschwinden auch die 'manuproc.berlios.de/'
+
+Bei mir hat MAGuS gerade komplett mit 
+aclocal [-I macros; in den manuproc verzeichnissen]
+und
+./autogen.sh
+
+in den jeweiligen Verzeichnissen durchkompiliert.
+(Nur in ManuProC_Base musste ich autogen.sh noch ausf&#252;hrbar machen.)
+
+Mal schauen, was passiert, wenn ich magus starte:
+
+Auf jeden Fall startet magus erheblich(!) schneller. :-O
+
+VersionsNummer ist 1.1.1 :-O
+
+Fehler:
+
+im Lernschema: Die zu lernenden Fertigkeiten (nur Fachkenntnisse und 
+Zauber) 
+werden als 'schon gelernt' reklamiert und lassen sich nicht lernen.
+
+Die Muttersprache habe ich aus versehen gerade 2x gelernt.
+
+Waffen haben keinen EW und k&#246;nnen nicht gesteigert werden
+
+(bei bereits existierenden Figuren, besteht dieses Problem nicht)
+
+bis dann,
+	Sandro
+
+
+- -- 
+gpg-key id: 0x5CC721CD available at: <A HREF="http://pgp.mit.edu/">http://pgp.mit.edu/</A>
+&quot;1984&quot; is NOT a HOWTO!
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.2 (GNU/Linux)
+
+iD8DBQFHWSBd0Y6KeVzHIc0RAni4AJ9DPApW6GSybba+AFIVh7+tE4UJPwCghTnZ
+rDTnjBcDi2xNym3zc8FTUVI=
+=2YG+
+-----END PGP SIGNATURE-----
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000219.html">[MAGUS] Magus build broken
+</A></li>
+	<LI>Next message: <A HREF="000221.html">[MAGUS] Spitzbube lernt Zaubern - Wie?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#220">[ date ]</a>
+              <a href="thread.html#220">[ thread ]</a>
+              <a href="subject.html#220">[ subject ]</a>
+              <a href="author.html#220">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>

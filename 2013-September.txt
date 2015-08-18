@@ -1,0 +1,36 @@
+From panther at jungle.kn-bremen.de  Tue Sep  3 18:32:32 2013
+From: panther at jungle.kn-bremen.de (Panther)
+Date: Tue, 03 Sep 2013 18:32:32 +0200
+Subject: [MAGUS] =?iso-8859-15?q?1=2E3=2E3_Fehler_beim_Steigern_von_Landes?=
+ =?iso-8859-15?q?kunde/Muszieren=2E=2E=2E=2E_Magus_h=E4ngt?=
+Message-ID: <52260F20.8040003@jungle.kn-bremen.de>
+
+Hallo,
+
+
+Ich will bei 1.3.3 eine neue Landeskunde oder eine neues Musikinstrument 
+lernen, doch dann h?ngt Magus...
+
+In table_steigern_main.cc nun folgerndes
+
+Code:
+
+MBE_T::st_zusatz const& table_steigern::Auswahl_neu(void* obj,
+                 std::vector<MBE_T::st_zusatz> const& list, std::string 
+const& title)
+{
+   table_steigern *ths=(table_steigern*)obj;
+   ths->datavec_zusatz=list;
+
+Nach dieser Zeile ist eigentlich schon alles passiert, die liste sollte 
+nicht leer sein...
+
+Entweder die Liste aller L?nder oder die Liste aller Musikinstrumente im 
+Angebot.
+Doch bei Musik ist die Size = 0, bei L?ndern = 26, aber dargestellt 
+werden sie beide nicht
+
+Warum?
+
+Panther
+

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MAGUS] Neues magus-live ebuild fuer Gentoo
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/midgard-general/2008-September/index.html" >
+   <LINK REL="made" HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Neues%20magus-live%20ebuild%20fuer%20Gentoo&In-Reply-To=%3CPine.LNX.4.64.0809131931180.23061%40wmax001.mathematik.uni-wuerzburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[MAGUS] Neues magus-live ebuild fuer Gentoo</H1>
+    <B>Vaeth</B> 
+    <A HREF="mailto:midgard-general%40lists.berlios.de?Subject=Re%3A%20%5BMAGUS%5D%20Neues%20magus-live%20ebuild%20fuer%20Gentoo&In-Reply-To=%3CPine.LNX.4.64.0809131931180.23061%40wmax001.mathematik.uni-wuerzburg.de%3E"
+       TITLE="[MAGUS] Neues magus-live ebuild fuer Gentoo">vaeth at mathematik.uni-wuerzburg.de
+       </A><BR>
+    <I>Sat Sep 13 19:52:10 CEST 2008</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#264">[ date ]</a>
+              <a href="thread.html#264">[ thread ]</a>
+              <a href="subject.html#264">[ subject ]</a>
+              <a href="author.html#264">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>An alle Gentoo-Benutzer in dieser Gruppe:
+(Gibt es hier &#252;berhaupt welche au&#223;er mir?)
+
+Das neueste magus-live ebuild, das die jeweils aktuelle monotone-Version
+installiert, ist unter
+  <A HREF="http://www.mathematik.uni-wuerzburg.de/~vaeth/gentoo/index.html">http://www.mathematik.uni-wuerzburg.de/~vaeth/gentoo/index.html</A>
+zu finden.
+
+Es unterst&#252;tzt neuerdings das sqlite Useflag, das auch per Default
+gesetzt ist und somit die Abh&#228;ngigkeit von dev-db/postgresql vermeidet
+aber daf&#252;r nat&#252;rlich &gt;=dev-db/sqlite-3 ben&#246;tigt.
+
+Zwar gibt es in Gentoo inzwischen eclasses f&#252;r fast alle g&#228;ngigen VCS
+(cvs, svn, git, bzr [in aufsteigender Qualit&#228;t :)]),
+aber leider nicht f&#252;r monotone, weshalb ich den zugeh&#246;rigen Code direkt
+in das ebuild eingef&#252;gt habe; daher ist das ebuild so ungew&#246;hnlich lang.
+
+Wer sp&#228;ter nur neu kompilieren will (ohne online die neuesten &#196;nderungen
+des Monotone-Repositories zu holen) kann in der Environment oder in
+/etc/make.conf die Variable EMTN_OFFLINE=1 setzen, also ganz analog zu
+ECVS_OFFLINE, ESVN_OFFLINE, EGIT_OFFLINE, EBZR_OFFLINE.
+
+Sch&#246;ne Gr&#252;&#223;e
+Martin
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#264">[ date ]</a>
+              <a href="thread.html#264">[ thread ]</a>
+              <a href="subject.html#264">[ subject ]</a>
+              <a href="author.html#264">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/midgard-general">More information about the Midgard-general
+mailing list</a><br>
+</body></html>
